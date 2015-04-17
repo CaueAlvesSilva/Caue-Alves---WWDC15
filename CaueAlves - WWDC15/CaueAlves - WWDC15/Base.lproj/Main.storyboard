@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y3H-PN-5FB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="2YP-94-NMm">
+            <objects>
+                <tabBarController id="y3H-PN-5FB" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Xo1-8f-Bjg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MWp-xn-p3y" kind="relationship" relationship="viewControllers" id="79I-dQ-tLx"/>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="L0d-Z8-Kze"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6r-VW-jRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="-177"/>
+        </scene>
+        <!--My Timeline-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="CaueAlves___WWDC15" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="maK-i9-Uhn"/>
                         <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
@@ -17,9 +36,66 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="My Timeline" image="timeline" id="YjM-0p-V32"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1276" y="156"/>
+        </scene>
+        <!--About Me-->
+        <scene sceneID="YTu-bR-bMp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MWp-xn-p3y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About Me" image="aboutMe" id="DLi-3p-PT9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="btM-mM-nMC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qda-0A-thr" kind="relationship" relationship="rootViewController" id="jKJ-Xl-saE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Prv-B8-ZcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="-504"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="pnU-q4-93U">
+            <objects>
+                <viewController id="qda-0A-thr" customClass="MenuViewController" customModule="CaueAlves___WWDC15" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pQm-3s-PGC"/>
+                        <viewControllerLayoutGuide type="bottom" id="gKt-zW-aAi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n3R-Pn-lAs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zo9-72-qns">
+                                <rect key="frame" x="63" y="260" width="80" height="80"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8kc-Tq-jXy"/>
+                    <connections>
+                        <outlet property="btnButton" destination="zo9-72-qns" id="wNx-vY-JzR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoS-RL-ieO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1960" y="-504"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="aboutMe" width="24" height="24"/>
+        <image name="timeline" width="26" height="26"/>
+    </resources>
 </document>

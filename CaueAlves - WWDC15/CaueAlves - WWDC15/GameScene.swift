@@ -10,50 +10,52 @@ import SpriteKit
 import Foundation
 import SpriteKit
 
-
-// MARK: - Properties and Sprite Nodes
-//================================================================
-
-// Hero (character)
-var hero: SKSpriteNode = SKSpriteNode() // bird
-var HeroTexture = SKTexture(imageNamed: "bird" ) // TexturaPassaro - imagem "bird.png"
-
-// Scenery
-var gameOverScreen: SKSpriteNode = SKSpriteNode() // cobrir
-
-var background1: SKSpriteNode = SKSpriteNode() // Fundo1
-var background2: SKSpriteNode = SKSpriteNode() // Fundo2
-
-var floor1: SKSpriteNode = SKSpriteNode() // Chao1
-var floor2: SKSpriteNode = SKSpriteNode() // Chao2
-
-// Obstacles
-var basicObstacle: Obstacle = Obstacle() // TuboBase
-var spaceTopBottom: Float = 250 // Espaco - entre tubo de cima e de baixo
-var Obstacles: [Obstacle] = [] // Tubos array
-
-// Range os Obstacles
-var prevNum: Float = 0 // igual
-var maxRange: Float = 175 // igual
-var minRange: Float = -100 // igual
-
-// Score
-var score: SKLabelNode = SKLabelNode(fontNamed: "System-bold") // pontuacaoL
-var scoreInt: Int = 0 // pontuacao - em inteiro int
-
-// Speed of the game
-var speedGame: CGFloat = 3.0 // velocidade
-
-// Game has started or not
-var inMotion:Bool = false // emMovimento
-
-// Collision
-var heroCollision: UInt32 = 1 // birdCategory
-var obstacleColission: UInt32 = 2 // pipeCategory
-
 //================================================================
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    
+    // MARK: - Properties and Sprite Nodes
+    //================================================================
+    
+    // Hero (character)
+    var hero: SKSpriteNode = SKSpriteNode() // bird
+    var HeroTexture = SKTexture(imageNamed: "bird") // TexturaPassaro - imagem "bird.png"
+    
+    // Scenery
+    var gameOverScreen: SKSpriteNode = SKSpriteNode() // cobrir
+    
+    var background1: SKSpriteNode = SKSpriteNode() // Fundo1
+    var background2: SKSpriteNode = SKSpriteNode() // Fundo2
+    
+    var floor1: SKSpriteNode = SKSpriteNode() // Chao1
+    var floor2: SKSpriteNode = SKSpriteNode() // Chao2
+    
+    // Obstacles
+    var basicObstacle: Obstacle = Obstacle() // TuboBase
+    var spaceTopBottom: Float = 250 // Espaco - entre tubo de cima e de baixo
+    var Obstacles: [Obstacle] = [] // Tubos array
+    
+    // Range os Obstacles
+    var prevNum: Float = 0 // igual
+    var maxRange: Float = 175 // igual
+    var minRange: Float = -100 // igual
+    
+    // Score
+    var score: SKLabelNode = SKLabelNode(fontNamed: "System-bold") // pontuacaoL
+    var scoreInt: Int = 0 // pontuacao - em inteiro int
+    
+    // Speed of the game
+    var speedGame: CGFloat = 3.0 // velocidade
+    
+    // Game has started or not
+    var inMotion:Bool = false // emMovimento
+    
+    // Collision
+    var heroCollision: UInt32 = 1 // birdCategory
+    var obstacleColission: UInt32 = 2 // pipeCategory
+    
+    
     
     // MARK: - didMoveToView
     //================================================================
@@ -110,7 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /******* Os fundos seguem a mesma lógica do chão, para estes
         // vamos colocar a imagem "Background.png" ********/
         // Size and position of background1
-        background1 = SKSpriteNode(imageNamed: "sky")
+        background1 = SKSpriteNode(imageNamed: "sk")
         background1.xScale = 1.4
         background1.yScale = 1.4
         background1.position.x = view.bounds.width * 0.5
@@ -119,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /******* Mesma logica do Chao2 ******/
         // Size and position of background1
-        background2 = SKSpriteNode(imageNamed: "sky")
+        background2 = SKSpriteNode(imageNamed: "sk")
         background2.xScale = 1.4
         background2.yScale = 1.4
         background2.position.x = view.bounds.width * 1.5
@@ -217,6 +219,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(obstacleTop)
     }
     //================================================================
+    
     
     
     // MARK: - Set Position of Bottom Obstacle

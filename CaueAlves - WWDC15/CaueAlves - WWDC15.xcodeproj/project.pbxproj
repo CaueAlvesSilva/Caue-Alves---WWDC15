@@ -15,6 +15,7 @@
 		0B4894881AE11FB300D84840 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4894871AE11FB300D84840 /* Images.xcassets */; };
 		0B48948B1AE11FB300D84840 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4894891AE11FB300D84840 /* LaunchScreen.xib */; };
 		0B4894971AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4894961AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift */; };
+		0BBCCB341AE1C88B002EA99B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		0B4894901AE11FB300D84840 /* CaueAlves - WWDC15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CaueAlves - WWDC15Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4894951AE11FB300D84840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B4894961AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaueAlves___WWDC15Tests.swift"; sourceTree = "<group>"; };
+		0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				0B4894871AE11FB300D84840 /* Images.xcassets */,
 				0B4894891AE11FB300D84840 /* LaunchScreen.xib */,
 				0B48947A1AE11FB300D84840 /* Supporting Files */,
+				0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */,
 			);
 			path = "CaueAlves - WWDC15";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				0B4894811AE11FB300D84840 /* GameScene.swift in Sources */,
 				0B4894831AE11FB300D84840 /* GameViewController.swift in Sources */,
 				0B48947D1AE11FB300D84840 /* AppDelegate.swift in Sources */,
+				0BBCCB341AE1C88B002EA99B /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +419,7 @@
 				0B48949C1AE11FB300D84840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B48949D1AE11FB300D84840 /* Build configuration list for PBXNativeTarget "CaueAlves - WWDC15Tests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				0B48949F1AE11FB300D84840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
