@@ -10,9 +10,12 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    @IBOutlet weak var imgImagem: UIImageView!
-    @IBOutlet weak var btnButton: UIButton!
+    @IBOutlet weak var btnWork: UIButton!
+    @IBInspectable
+    @IBOutlet weak var btnStudy: UIButton!
     
+    @IBInspectable
+    var pieColor:UIColor = UIColor(red: 29/255, green: 209/255, blue: 102/255, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,12 +28,19 @@ class MenuViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        btnButton.layer.backgroundColor = UIColor .greenColor().CGColor
-        btnButton.layer.borderWidth = 1.5
-        btnButton.layer.borderColor = UIColor .grayColor().CGColor
-        btnButton.layer.cornerRadius = 40
-        btnButton.layer.masksToBounds = true
-        btnButton.clipsToBounds = true
+        btnWork.layer.backgroundColor = UIColor .redColor().CGColor
+        btnWork.layer.borderWidth = 3
+        btnWork.layer.borderColor = UIColor .whiteColor().CGColor
+        btnWork.layer.cornerRadius = 40
+        btnWork.layer.masksToBounds = true
+        btnWork.clipsToBounds = true
+        
+        btnStudy.layer.backgroundColor = UIColor .yellowColor().CGColor
+        btnStudy.layer.borderWidth = 3
+        btnStudy.layer.borderColor = UIColor .whiteColor().CGColor
+        btnStudy.layer.cornerRadius = 40
+        btnStudy.layer.masksToBounds = true
+        btnStudy.clipsToBounds = true
     }
     
 
