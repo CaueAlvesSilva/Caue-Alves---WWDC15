@@ -10,11 +10,16 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+    @IBInspectable
     @IBOutlet weak var btnWork: UIButton!
     @IBInspectable
     @IBOutlet weak var btnStudy: UIButton!
-    
     @IBInspectable
+    @IBOutlet weak var btnFamily: UIButton!
+    @IBInspectable
+    @IBOutlet weak var btnHobbies: UIButton!
+    @IBInspectable
+    
     var pieColor:UIColor = UIColor(red: 29/255, green: 209/255, blue: 102/255, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +40,27 @@ class MenuViewController: UIViewController {
         btnWork.layer.masksToBounds = true
         btnWork.clipsToBounds = true
         
+        
         btnStudy.layer.backgroundColor = UIColor .yellowColor().CGColor
         btnStudy.layer.borderWidth = 3
         btnStudy.layer.borderColor = UIColor .whiteColor().CGColor
         btnStudy.layer.cornerRadius = 40
         btnStudy.layer.masksToBounds = true
         btnStudy.clipsToBounds = true
+        
+        btnFamily.layer.backgroundColor = UIColor .greenColor().CGColor
+        btnFamily.layer.borderWidth = 3
+        btnFamily.layer.borderColor = UIColor .whiteColor().CGColor
+        btnFamily.layer.cornerRadius = 40
+        btnFamily.layer.masksToBounds = true
+        btnFamily.clipsToBounds = true
+        
+        btnHobbies.layer.backgroundColor = UIColor .blueColor().CGColor
+        btnHobbies.layer.borderWidth = 3
+        btnHobbies.layer.borderColor = UIColor .whiteColor().CGColor
+        btnHobbies.layer.cornerRadius = 40
+        btnHobbies.layer.masksToBounds = true
+        btnHobbies.clipsToBounds = true
     }
     
 

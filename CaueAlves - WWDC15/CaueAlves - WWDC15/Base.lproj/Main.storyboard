@@ -73,11 +73,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gray1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Z69-EB-uve">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="gray2" translatesAutoresizingMaskIntoConstraints="NO" id="rnB-Ff-Hni">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0w-lz-HE5">
-                                <rect key="frame" x="53" y="381" width="55" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0w-lz-HE5">
+                                <rect key="frame" x="150" y="329" width="55" height="25"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -86,8 +86,18 @@
                                     <rect key="frame" x="99" y="307" width="55" height="25"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Study" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-DT-zfa">
-                                <rect key="frame" x="197" y="381" width="62" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Family" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuv-mF-wkd">
+                                <rect key="frame" x="136" y="481" width="82" height="25"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.52937578910000005" green="0.52937578910000005" blue="0.52937578910000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="99" y="307" width="55" height="25"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Study" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-DT-zfa">
+                                <rect key="frame" x="389" y="329" width="62" height="25"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -96,10 +106,20 @@
                                     <rect key="frame" x="243" y="307" width="62" height="25"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4U4-Bp-7ii">
-                                <rect key="frame" x="188" y="301" width="80" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hobbies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ets-9b-Q38">
+                                <rect key="frame" x="380" y="481" width="80" height="25"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.52937578910000005" green="0.52937578910000005" blue="0.52937578910000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="243" y="307" width="62" height="25"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4U4-Bp-7ii">
+                                <rect key="frame" x="380" y="249" width="80" height="80"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <state key="normal" image="study4.png">
+                                <state key="normal" image="study">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="1" green="0.99607843137254903" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -107,10 +127,10 @@
                                     <rect key="frame" x="234" y="227" width="80" height="80"/>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zo9-72-qns">
-                                <rect key="frame" x="40" y="298" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zo9-72-qns">
+                                <rect key="frame" x="137" y="246" width="80" height="80"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" backgroundImage="dev03.png">
+                                <state key="normal" backgroundImage="work">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.78431372549019607" green="0.23529411764705882" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -118,11 +138,27 @@
                                     <rect key="frame" x="86" y="224" width="80" height="80"/>
                                 </variation>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDn-N3-Ofv">
+                                <rect key="frame" x="137" y="398" width="80" height="80"/>
+                                <state key="normal" backgroundImage="family">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byN-rc-bru">
+                                <rect key="frame" x="380" y="398" width="80" height="80"/>
+                                <state key="normal" backgroundImage="hobbies">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4U4-Bp-7ii" firstAttribute="centerX" secondItem="BgA-DT-zfa" secondAttribute="centerX" id="9p0-1t-OrJ"/>
-                            <constraint firstItem="r0w-lz-HE5" firstAttribute="centerX" secondItem="zo9-72-qns" secondAttribute="centerX" constant="0.5" id="IiS-2X-TLA"/>
+                            <constraint firstAttribute="centerY" secondItem="rnB-Ff-Hni" secondAttribute="centerY" id="ISu-wE-qWb"/>
+                            <constraint firstAttribute="centerX" secondItem="rnB-Ff-Hni" secondAttribute="centerX" id="Lg8-Kz-6aC"/>
+                            <constraint firstItem="byN-rc-bru" firstAttribute="centerX" secondItem="Ets-9b-Q38" secondAttribute="centerX" id="r0f-GR-OZk"/>
+                            <constraint firstItem="jDn-N3-Ofv" firstAttribute="centerX" secondItem="Iuv-mF-wkd" secondAttribute="centerX" id="yll-YC-o4P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hello" id="8kc-Tq-jXy"/>
@@ -132,6 +168,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="btnFamily" destination="jDn-N3-Ofv" id="4Bh-UT-yiA"/>
+                        <outlet property="btnHobbies" destination="byN-rc-bru" id="8Mu-VV-9G9"/>
                         <outlet property="btnStudy" destination="4U4-Bp-7ii" id="0WZ-yq-jIM"/>
                         <outlet property="btnWork" destination="zo9-72-qns" id="7qz-Zu-PZ6"/>
                     </connections>
@@ -140,29 +178,14 @@
             </objects>
             <point key="canvasLocation" x="1960" y="-504"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="QCF-KT-7pf">
-            <objects>
-                <viewController id="dFr-1D-LIB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JMc-4Q-3NW"/>
-                        <viewControllerLayoutGuide type="bottom" id="5vl-oK-MBf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qx5-JD-gq8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y60-Je-RPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="abouMe" width="48" height="48"/>
-        <image name="dev03.png" width="64" height="64"/>
-        <image name="gray1.jpg" width="1024" height="768"/>
-        <image name="study4.png" width="64" height="64"/>
+        <image name="family" width="64" height="64"/>
+        <image name="gray2" width="1600" height="1200"/>
+        <image name="hobbies" width="64" height="64"/>
+        <image name="study" width="64" height="64"/>
         <image name="timeline" width="48" height="48"/>
+        <image name="work" width="64" height="64"/>
     </resources>
 </document>
