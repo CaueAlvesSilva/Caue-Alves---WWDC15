@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B329BE71AE6D09F006EA86C /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B329BE61AE6D09F006EA86C /* profile.png */; };
-		0B329BE91AE6D41A006EA86C /* diploma.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B329BE81AE6D41A006EA86C /* diploma.png */; };
+		0B329BEB1AE6E14A006EA86C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */; };
 		0B48947D1AE11FB300D84840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B48947C1AE11FB300D84840 /* AppDelegate.swift */; };
 		0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B48947E1AE11FB300D84840 /* GameScene.sks */; };
 		0B4894811AE11FB300D84840 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4894801AE11FB300D84840 /* GameScene.swift */; };
@@ -30,8 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B329BE61AE6D09F006EA86C /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
-		0B329BE81AE6D41A006EA86C /* diploma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diploma.png; sourceTree = "<group>"; };
+		0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "CaueAlves - WWDC15/ProfileViewController.swift"; sourceTree = "<group>"; };
 		0B4894771AE11FB300D84840 /* CaueAlves - WWDC15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CaueAlves - WWDC15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B48947B1AE11FB300D84840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B48947C1AE11FB300D84840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +65,6 @@
 		0B30EBEC1AE1D2E2008363F3 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				0B329BE61AE6D09F006EA86C /* profile.png */,
-				0B329BE81AE6D41A006EA86C /* diploma.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -76,6 +72,7 @@
 		0B48946E1AE11FB300D84840 = {
 			isa = PBXGroup;
 			children = (
+				0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */,
 				0B30EBEC1AE1D2E2008363F3 /* images */,
 				0B4894791AE11FB300D84840 /* CaueAlves - WWDC15 */,
 				0B4894931AE11FB300D84840 /* CaueAlves - WWDC15Tests */,
@@ -213,10 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4894881AE11FB300D84840 /* Images.xcassets in Resources */,
-				0B329BE91AE6D41A006EA86C /* diploma.png in Resources */,
 				0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */,
 				0B4894861AE11FB300D84840 /* Main.storyboard in Resources */,
-				0B329BE71AE6D09F006EA86C /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +231,7 @@
 			files = (
 				0B4894811AE11FB300D84840 /* GameScene.swift in Sources */,
 				0B4894831AE11FB300D84840 /* GameViewController.swift in Sources */,
+				0B329BEB1AE6E14A006EA86C /* ProfileViewController.swift in Sources */,
 				0B48947D1AE11FB300D84840 /* AppDelegate.swift in Sources */,
 				0BBCCB341AE1C88B002EA99B /* MenuViewController.swift in Sources */,
 			);
