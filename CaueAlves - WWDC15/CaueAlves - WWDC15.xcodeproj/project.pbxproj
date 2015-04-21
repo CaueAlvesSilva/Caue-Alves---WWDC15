@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2307BB1AE70BC100EB5D42 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2307BA1AE70BC100EB5D42 /* DetailViewController.swift */; };
 		0B329BEB1AE6E14A006EA86C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */; };
 		0B48947D1AE11FB300D84840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B48947C1AE11FB300D84840 /* AppDelegate.swift */; };
 		0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B48947E1AE11FB300D84840 /* GameScene.sks */; };
@@ -29,10 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "CaueAlves - WWDC15/ProfileViewController.swift"; sourceTree = "<group>"; };
+		0B2307BA1AE70BC100EB5D42 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0B4894771AE11FB300D84840 /* CaueAlves - WWDC15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CaueAlves - WWDC15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B48947B1AE11FB300D84840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B48947C1AE11FB300D84840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0B48947C1AE11FB300D84840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "CaueAlves - WWDC15/AppDelegate.swift"; sourceTree = "<group>"; };
 		0B48947E1AE11FB300D84840 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0B4894801AE11FB300D84840 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		0B4894821AE11FB300D84840 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -62,18 +64,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B30EBEC1AE1D2E2008363F3 /* images */ = {
+		0B2307BC1AE7146200EB5D42 /* Tabbar Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				0B4894821AE11FB300D84840 /* GameViewController.swift */,
+				0B4894801AE11FB300D84840 /* GameScene.swift */,
+				0B48947E1AE11FB300D84840 /* GameScene.sks */,
+			);
+			name = "Tabbar Timeline";
+			sourceTree = "<group>";
+		};
+		0B2307BD1AE714BC00EB5D42 /* Tabbar AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+				0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */,
+				0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */,
+				0B2307BA1AE70BC100EB5D42 /* DetailViewController.swift */,
+			);
+			name = "Tabbar AboutMe";
+			sourceTree = "<group>";
+		};
+		0B30EBEC1AE1D2E2008363F3 /* photos */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = images;
+			name = photos;
 			sourceTree = "<group>";
 		};
 		0B48946E1AE11FB300D84840 = {
 			isa = PBXGroup;
 			children = (
-				0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */,
-				0B30EBEC1AE1D2E2008363F3 /* images */,
+				0B48947C1AE11FB300D84840 /* AppDelegate.swift */,
+				0B30EBEC1AE1D2E2008363F3 /* photos */,
 				0B4894791AE11FB300D84840 /* CaueAlves - WWDC15 */,
 				0B4894931AE11FB300D84840 /* CaueAlves - WWDC15Tests */,
 				0B4894781AE11FB300D84840 /* Products */,
@@ -92,14 +114,11 @@
 		0B4894791AE11FB300D84840 /* CaueAlves - WWDC15 */ = {
 			isa = PBXGroup;
 			children = (
-				0B48947C1AE11FB300D84840 /* AppDelegate.swift */,
-				0B48947E1AE11FB300D84840 /* GameScene.sks */,
-				0B4894801AE11FB300D84840 /* GameScene.swift */,
-				0B4894821AE11FB300D84840 /* GameViewController.swift */,
+				0B2307BD1AE714BC00EB5D42 /* Tabbar AboutMe */,
+				0B2307BC1AE7146200EB5D42 /* Tabbar Timeline */,
 				0B4894841AE11FB300D84840 /* Main.storyboard */,
 				0B4894871AE11FB300D84840 /* Images.xcassets */,
 				0B48947A1AE11FB300D84840 /* Supporting Files */,
-				0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */,
 			);
 			path = "CaueAlves - WWDC15";
 			sourceTree = "<group>";
@@ -232,6 +251,7 @@
 				0B4894811AE11FB300D84840 /* GameScene.swift in Sources */,
 				0B4894831AE11FB300D84840 /* GameViewController.swift in Sources */,
 				0B329BEB1AE6E14A006EA86C /* ProfileViewController.swift in Sources */,
+				0B2307BB1AE70BC100EB5D42 /* DetailViewController.swift in Sources */,
 				0B48947D1AE11FB300D84840 /* AppDelegate.swift in Sources */,
 				0BBCCB341AE1C88B002EA99B /* MenuViewController.swift in Sources */,
 			);

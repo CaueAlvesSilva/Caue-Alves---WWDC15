@@ -20,20 +20,14 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var btnFamily: UIButton!
     @IBInspectable
     @IBOutlet weak var btnHobbies: UIButton!
-    @IBInspectable
     
-    var button: String?
-    
-    var pieColor:UIColor = UIColor(red: 29/255, green: 209/255, blue: 102/255, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -74,25 +68,30 @@ class MenuViewController: UIViewController {
         btnProfile.clipsToBounds = true
     }
     
-
-    @IBAction func btnWork(sender: AnyObject)
-    {
-        button = "Work"
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let dvc = segue.destinationViewController as? DetailViewController
+        {
+            if (segue.identifier == "segueWork")
+            {
+                dvc.type = "Work"
+            }
+            else if (segue.identifier == "segueStudy")
+            {
+                dvc.type = "Study"
+            }
+            else if (segue.identifier == "segueFamily")
+            {
+                dvc.type = "Family"
+            }
+            else if (segue.identifier == "segueHobbies")
+            {
+                dvc.type = "Hobbies"
+            }
+        }
     }
     
-    @IBAction func btnStudy(sender: AnyObject)
-    {
-        button = "Study"
-    }
-    
-    @IBAction func btnFamily(sender: AnyObject)
-    {
-        button = "Family"
-    }
 
-    @IBAction func btnHobbies(sender: AnyObject)
-    {
-        button = "Hobbies"
-    }
     
 }

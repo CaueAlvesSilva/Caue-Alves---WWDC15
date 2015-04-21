@@ -128,8 +128,7 @@
                                     <rect key="frame" x="234" y="227" width="80" height="80"/>
                                 </variation>
                                 <connections>
-                                    <action selector="btnStudy:" destination="qda-0A-thr" eventType="touchUpInside" id="Syu-m8-bbs"/>
-                                    <segue destination="k8G-e1-2V2" kind="show" id="b1I-0N-bJa"/>
+                                    <segue destination="k8G-e1-2V2" kind="show" identifier="segueStudy" id="b1I-0N-bJa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zo9-72-qns">
@@ -143,8 +142,7 @@
                                     <rect key="frame" x="86" y="224" width="80" height="80"/>
                                 </variation>
                                 <connections>
-                                    <action selector="btnWork:" destination="qda-0A-thr" eventType="touchUpInside" id="pnk-KJ-hdq"/>
-                                    <segue destination="k8G-e1-2V2" kind="show" id="Sgb-dn-bSr"/>
+                                    <segue destination="k8G-e1-2V2" kind="show" identifier="segueWork" id="Sgb-dn-bSr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDn-N3-Ofv">
@@ -154,8 +152,7 @@
                                     <color key="titleShadowColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnFamily:" destination="qda-0A-thr" eventType="touchUpInside" id="BIl-xd-6La"/>
-                                    <segue destination="k8G-e1-2V2" kind="show" id="ltC-tE-aq9"/>
+                                    <segue destination="k8G-e1-2V2" kind="show" identifier="segueFamily" id="ltC-tE-aq9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byN-rc-bru">
@@ -165,8 +162,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnHobbies:" destination="qda-0A-thr" eventType="touchUpInside" id="weA-aU-deY"/>
-                                    <segue destination="k8G-e1-2V2" kind="show" id="vLh-Z9-eB0"/>
+                                    <segue destination="k8G-e1-2V2" kind="show" identifier="segueHobbies" id="vLh-Z9-eB0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-tl-84x">
@@ -207,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="1960" y="-504"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="t7U-Qr-qqi">
             <objects>
-                <viewController id="k8G-e1-2V2" sceneMemberID="viewController">
+                <viewController id="k8G-e1-2V2" customClass="DetailViewController" customModule="CaueAlves___WWDC15" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jHv-fM-nz7"/>
                         <viewControllerLayoutGuide type="bottom" id="0C2-hp-I5F"/>
@@ -332,6 +328,6 @@
         <image name="work" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vLh-Z9-eB0"/>
+        <segue reference="Sgb-dn-bSr"/>
     </inferredMetricsTieBreakers>
 </document>
