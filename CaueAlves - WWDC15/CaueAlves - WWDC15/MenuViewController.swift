@@ -22,6 +22,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var btnHobbies: UIButton!
     @IBInspectable
     
+    var button: String?
+    
     var pieColor:UIColor = UIColor(red: 29/255, green: 209/255, blue: 102/255, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,14 +75,24 @@ class MenuViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnWork(sender: AnyObject)
+    {
+        button = "Work"
     }
-    */
+    
+    @IBAction func btnStudy(sender: AnyObject)
+    {
+        button = "Study"
+    }
+    
+    @IBAction func btnFamily(sender: AnyObject)
+    {
+        button = "Family"
+    }
 
+    @IBAction func btnHobbies(sender: AnyObject)
+    {
+        button = "Hobbies"
+    }
+    
 }

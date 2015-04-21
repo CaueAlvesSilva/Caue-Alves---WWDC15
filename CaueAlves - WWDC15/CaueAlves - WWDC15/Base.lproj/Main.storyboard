@@ -128,6 +128,7 @@
                                     <rect key="frame" x="234" y="227" width="80" height="80"/>
                                 </variation>
                                 <connections>
+                                    <action selector="btnStudy:" destination="qda-0A-thr" eventType="touchUpInside" id="Syu-m8-bbs"/>
                                     <segue destination="k8G-e1-2V2" kind="show" id="b1I-0N-bJa"/>
                                 </connections>
                             </button>
@@ -142,6 +143,7 @@
                                     <rect key="frame" x="86" y="224" width="80" height="80"/>
                                 </variation>
                                 <connections>
+                                    <action selector="btnWork:" destination="qda-0A-thr" eventType="touchUpInside" id="pnk-KJ-hdq"/>
                                     <segue destination="k8G-e1-2V2" kind="show" id="Sgb-dn-bSr"/>
                                 </connections>
                             </button>
@@ -152,6 +154,7 @@
                                     <color key="titleShadowColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="btnFamily:" destination="qda-0A-thr" eventType="touchUpInside" id="BIl-xd-6La"/>
                                     <segue destination="k8G-e1-2V2" kind="show" id="ltC-tE-aq9"/>
                                 </connections>
                             </button>
@@ -162,6 +165,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="btnHobbies:" destination="qda-0A-thr" eventType="touchUpInside" id="weA-aU-deY"/>
                                     <segue destination="k8G-e1-2V2" kind="show" id="vLh-Z9-eB0"/>
                                 </connections>
                             </button>

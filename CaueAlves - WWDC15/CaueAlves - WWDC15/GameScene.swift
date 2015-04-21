@@ -46,7 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreInt: Int = 0 // pontuacao - em inteiro int
     
     // Speed of the game
-    var speedGame: CGFloat = 5.0 // velocidade
+    var speedGame: CGFloat = 3.0 // velocidade
     
     // Game has started or not
     var inMotion:Bool = false // emMovimento
@@ -112,7 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /******* Os fundos seguem a mesma lógica do chão, para estes
         // vamos colocar a imagem "Background.png" ********/
         // Size and position of background1
-        background1 = SKSpriteNode(imageNamed: "sk")
+        background1 = SKSpriteNode(imageNamed: "sky")
         background1.xScale = 1.4
         background1.yScale = 1.4
         background1.position.x = view.bounds.width * 0.5
@@ -121,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /******* Mesma logica do Chao2 ******/
         // Size and position of background1
-        background2 = SKSpriteNode(imageNamed: "sk")
+        background2 = SKSpriteNode(imageNamed: "sky")
         background2.xScale = 1.4
         background2.yScale = 1.4
         background2.position.x = view.bounds.width * 1.5
