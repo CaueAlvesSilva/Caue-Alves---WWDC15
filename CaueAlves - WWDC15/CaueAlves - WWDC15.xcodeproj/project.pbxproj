@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B329BE71AE6D09F006EA86C /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B329BE61AE6D09F006EA86C /* profile.png */; };
+		0B329BE91AE6D41A006EA86C /* diploma.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B329BE81AE6D41A006EA86C /* diploma.png */; };
 		0B48947D1AE11FB300D84840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B48947C1AE11FB300D84840 /* AppDelegate.swift */; };
 		0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B48947E1AE11FB300D84840 /* GameScene.sks */; };
 		0B4894811AE11FB300D84840 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4894801AE11FB300D84840 /* GameScene.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B329BE61AE6D09F006EA86C /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		0B329BE81AE6D41A006EA86C /* diploma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diploma.png; sourceTree = "<group>"; };
 		0B4894771AE11FB300D84840 /* CaueAlves - WWDC15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CaueAlves - WWDC15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B48947B1AE11FB300D84840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B48947C1AE11FB300D84840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 		0B30EBEC1AE1D2E2008363F3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				0B329BE61AE6D09F006EA86C /* profile.png */,
+				0B329BE81AE6D41A006EA86C /* diploma.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -207,8 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4894881AE11FB300D84840 /* Images.xcassets in Resources */,
+				0B329BE91AE6D41A006EA86C /* diploma.png in Resources */,
 				0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */,
 				0B4894861AE11FB300D84840 /* Main.storyboard in Resources */,
+				0B329BE71AE6D09F006EA86C /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

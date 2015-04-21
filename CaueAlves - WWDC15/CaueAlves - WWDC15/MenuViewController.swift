@@ -11,6 +11,8 @@ import UIKit
 class MenuViewController: UIViewController {
 
     @IBInspectable
+    @IBOutlet weak var btnProfile: UIButton!
+    @IBInspectable
     @IBOutlet weak var btnWork: UIButton!
     @IBInspectable
     @IBOutlet weak var btnStudy: UIButton!
@@ -61,6 +63,13 @@ class MenuViewController: UIViewController {
         btnHobbies.layer.cornerRadius = 40
         btnHobbies.layer.masksToBounds = true
         btnHobbies.clipsToBounds = true
+        
+        btnProfile.layer.backgroundColor = UIColor .whiteColor().CGColor
+        btnProfile.layer.borderWidth = 3
+        btnProfile.layer.borderColor = UIColor .whiteColor().CGColor
+        btnProfile.layer.cornerRadius = 50
+        btnProfile.layer.masksToBounds = true
+        btnProfile.clipsToBounds = true
     }
     
 
