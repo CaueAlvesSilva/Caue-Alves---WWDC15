@@ -40,13 +40,13 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            //scene.scaleMode = .AspectFill
             scene.size = skView.bounds.size
             
             skView.presentScene(scene)
         }
         
-        showAlert()
+        // Show HelloAlert of the game
+        showHelloAlert()
     }
     
 
@@ -72,20 +72,22 @@ class GameViewController: UIViewController {
     }
     
     
-    func showAlert()
+    // MARK: - Show 'HelloAlert'
+    //================================================================
+    func showHelloAlert()
     {
-        // Instanciando um novo Alerta ou ActionSheet
-        let alerta: UIAlertController = UIAlertController(title: "Play the game and see my Timeline", message: "Touch the screen to start the game, and after this you'll know what to do ;)", preferredStyle: .Alert) // ou .ActionSheet
+        // create alert
+        let helloAlert: UIAlertController = UIAlertController(title: "Play the game and see my Timeline", message: "\nTouch the screen to start the game, and after this you'll know what to do ;)", preferredStyle: .Alert)
         
-        // Criando uma acao1 (Sim) para o Alerta/ActionSheet
-        let acao1: UIAlertAction = UIAlertAction(title: "Start", style: .Default) {
+        // action
+        let actionStart: UIAlertAction = UIAlertAction(title: "Start!", style: .Default) {
             action -> Void in
         }
-        // add acao1 ao Alerta/ActionSheet
-        alerta.addAction(acao1)
-        
-        // Apresentar Alerta/ActionSheet
-        self.presentViewController(alerta, animated: true, completion: nil)
+    
+        // show
+        helloAlert.addAction(actionStart)
+        self.presentViewController(helloAlert, animated: true, completion: nil)
     }
+    //================================================================
 
 }

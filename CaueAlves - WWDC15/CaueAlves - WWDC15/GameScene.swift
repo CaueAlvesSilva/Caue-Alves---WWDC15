@@ -20,7 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Hero (character)
     var hero: SKSpriteNode = SKSpriteNode() // bird
-    var HeroTexture = SKTexture(imageNamed: "hero") // TexturaPassaro - imagem "bird.png"
+    var HeroTexture = SKTexture(imageNamed: "hero") // TexturaPassaro
     
     // Scenery
     var gameOverScreen: SKSpriteNode = SKSpriteNode() // cobrir
@@ -77,9 +77,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /****** A Label pontuação é colocada no canto superior esquerdo, mas para já fica escondida *******/
         // Size and position of label Score
-        score.position.x = 13
+        score.position.x = 15
         score.position.y = view.bounds.size.height - 50
-        score.text = "Score: 0"
+        score.text = "0 %"
         score.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         score.hidden = true
         
@@ -89,11 +89,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         floor1.size.width = view.bounds.width + 2
         floor1.position.x = view.bounds.width * 0.5
         floor1.position.y = floor1.size.height * 0.4
-        floor1.texture?.filteringMode = SKTextureFilteringMode.Nearest // --------------- ?
+        floor1.texture?.filteringMode = SKTextureFilteringMode.Nearest
         //O seu corpo fisico será do mesmo tamanho da imagem que iremos visualizar
         floor1.physicsBody = SKPhysicsBody(rectangleOfSize: floor1.size)
         //dynamic = false para que não reaja a colisões ou forças de gravidade
-        floor1.physicsBody?.dynamic = false // --------------- ?
+        floor1.physicsBody?.dynamic = false
         floor1.zPosition = 10
         
         /***** As duas variáveis Chao são quase iguais só diferencia a sua posição, enquanto
@@ -104,9 +104,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         floor2.size.width = view.bounds.width + 2
         floor2.position.x = view.bounds.width * 1.5
         floor2.position.y = floor2.size.height * 0.4
-        floor2.texture?.filteringMode = SKTextureFilteringMode.Nearest // --------------- ?
+        floor2.texture?.filteringMode = SKTextureFilteringMode.Nearest
         floor2.physicsBody = SKPhysicsBody(rectangleOfSize: floor2.size)
-        floor2.physicsBody?.dynamic = false // --------------- ?
+        floor2.physicsBody?.dynamic = false
         floor2.zPosition = 10
         
         /******* Os fundos seguem a mesma lógica do chão, para estes
@@ -117,7 +117,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background1.yScale = 1.4
         background1.position.x = view.bounds.width * 0.5
         background1.position.y = 170
-        background1.texture?.filteringMode = SKTextureFilteringMode.Nearest // --------------- ?
+        background1.texture?.filteringMode = SKTextureFilteringMode.Nearest
         
         /******* Mesma logica do Chao2 ******/
         // Size and position of background1
@@ -126,7 +126,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background2.yScale = 1.4
         background2.position.x = view.bounds.width * 1.5
         background2.position.y = 170
-        background2.texture?.filteringMode = SKTextureFilteringMode.Nearest // --------------- ?
+        background2.texture?.filteringMode = SKTextureFilteringMode.Nearest
         
         /********* Este filteringMode serve para ajustarmos o tamanho da imagem do passaro
         // ao seu objecto *******/
@@ -135,16 +135,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero = SKSpriteNode(texture: HeroTexture)
         hero.physicsBody = SKPhysicsBody(circleOfRadius: 5)
         //Para já e como o jogo ainda não começou vamos colocar o pássaro estatico
-        hero.physicsBody?.dynamic = false // --------------- ?
-        hero.physicsBody?.contactTestBitMask = heroCollision // --------------- ?
-        hero.physicsBody?.collisionBitMask = obstacleColission // --------------- ?
+        hero.physicsBody?.dynamic = false
+        hero.physicsBody?.contactTestBitMask = heroCollision
+        hero.physicsBody?.collisionBitMask = obstacleColission
         hero.zPosition = 9
         hero.position = CGPoint(x: 150, y: view.bounds.width / 2 - 10)
         
         /***** Aqui colocamos a física do nosso mundo onde a gravidade vai ser y = -0.5 ****/
         // Gravity
         self.physicsWorld.contactDelegate = self
-        self.physicsWorld.gravity = CGVectorMake(0, -5.0)
+        self.physicsWorld.gravity = CGVectorMake(0, -4) // -5.0
         
         /****** Adicionar ao ecrã os objectos criados anteriormente menos o Cobrir
         // que apenas será colocado no fim do jogo ******/
@@ -171,31 +171,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let setDistanceUpDown = distanceUpDown - spaceTopBottom / 2
         //Declaração dos dois tubos
         let obstacleBottom = basicObstacle.copy() as Obstacle
-       //////////// let obstacleTop = basicObstacle.copy() as Obstacle
         //A posição x onde termina a tela
         let xPositionEndScreen = self.view?.bounds.size.width
         
         /****** Aqui definimos para o tubo de baixo a imagem, se é um tubo de cima ou de baixo
         // e sua posição baseada no offset e no xx *******/
+        
         // ObstacleBottom
         // image
-        if (scoreInt == 4){
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX1")
+        /****** A função SetRelativePositionBot será explicada mais a frente para já basta sabermos que tem o objectivo de colocar o nosso tubo no sitio certo *****/
+        // position
+        // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+        if (scoreInt == 3){
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack1")
             self.setSpecialPositionObstacle(obstacleBottom)
-        }else if (scoreInt == 8){
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX2")
+        }else if (scoreInt == 5){
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack1")
             self.setSpecialPositionObstacle(obstacleBottom)
         }else{
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
-            self.setPositionBottomObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack1")
+            self.setPositionObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
         }
-//        obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
+        // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+        
         obstacleBottom.texture?.filteringMode = SKTextureFilteringMode.Nearest
         obstacleBottom.isBottom = true
-        /****** A função SetRelativePositionBot será explicada mais a frente para já basta sabermos
-        / que tem o objectivo de colocar o nosso tubo no sitio certo *****/
-        // position
-//        self.setPositionBottomObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
+        
         /****** Definição das dimensões do seu corpo físico ******/
         // physicsBody
         obstacleBottom.physicsBody = SKPhysicsBody(rectangleOfSize: obstacleBottom.size)
@@ -207,35 +208,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Obstacles.append(obstacleBottom)
         //E por fim adicionamos ao cenário
         self.addChild(obstacleBottom)
-        
-        /******** Neste pedaço de código vamos repetir o mesmo a cima mas
-        // para o tubo de cima. *******/
-        // Obstacle Top
-        // image
-       //////// obstacleTop.texture = SKTexture(imageNamed: "PipeUp")
-      /////////  obstacleTop.texture?.filteringMode = SKTextureFilteringMode.Nearest
-        /****** Temos aqui uma variante no Y pois vamos adicionar ao offset o Espaco
-        // assim ao seu deslocamento adicionamos mais o valor do espaço que
-        // provocará o intervalo entre os 2 tubos *****/
-        // position
-       //////// self.setPositionTopObstacle(obstacleTop, x: Float(xPositionEndScreen!), y: Float(Float(setDistanceUpDown) + Float(spaceTopBottom)))
-        // physicsBody
-      ////////  obstacleTop.physicsBody = SKPhysicsBody(rectangleOfSize: obstacleTop.size)
-       //////// obstacleTop.physicsBody?.dynamic = false
-       /////// obstacleTop.physicsBody?.contactTestBitMask = heroCollision
-       //////// obstacleTop.physicsBody?.collisionBitMask = heroCollision
-        // add
-    //////    Obstacles.append(obstacleTop)
-    //////    self.addChild(obstacleTop)
     }
     //================================================================
     
     
     
-    // MARK: - Set Position of Bottom Obstacle
+    // MARK: - Set Position of Obstacle
     //================================================================
     /****** Temos como parâmetros de entrada o tubo alvo, a posição x e y *****/
-    func setPositionBottomObstacle(node: SKSpriteNode, x:Float, y:Float) // obstacle, position x and y
+    func setPositionObstacle(node: SKSpriteNode, x:Float, y:Float) // obstacle, position x and y
     {
         /****** O x é fácil é o nosso parâmetro X mais metade da largura do nosso tubo,
         // temos de acrescentar metade da largura porque o tubo será criado a partir
@@ -247,42 +228,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         node.position.x = CGFloat(xPosition)
         node.position.y = CGFloat(yPosition)
-        println("\n\n\n\n\n")
-        println(xPosition)
-        println(yPosition)
     }
     
-    func setSpecialPositionObstacle(node: SKSpriteNode) // obstacle, position x and y
+    func setSpecialPositionObstacle(node: SKSpriteNode) // obstacle
     {
-        /****** O x é fácil é o nosso parâmetro X mais metade da largura do nosso tubo,
-        // temos de acrescentar metade da largura porque o tubo será criado a partir
-        // do seu centro, logo teremos de dar um desconto. ******/
-//        let xPosition = (Float(node.size.width) / 2) + x
-//        //No y temos o centro da altura da tela mais o parâmetro Y mais metade
-//        // da altura como explicado anteriormente
-//        let yPosition = Float(self.view!.bounds.size.height) / 2 -  (Float(node.size.height) / 2 ) + y
-        
         node.position.x = CGFloat(406.25)
         node.position.y = CGFloat(36.5)
     }
     //================================================================
+
     
-    
-    
-    // MARK: - Set Position of Top Obstacle
-    //================================================================
-    /****** Função SetRelativePositionTop igual a anterior mas para o tubo de cima *****/
-//    func setPositionTopObstacle (node: SKSpriteNode, x:Float, y:Float) // obstacle, position x and y
-//    {
-//        let xPosition = (Float(node.size.width) / 2) + x
-//        let yPosition = Float(self.view!.bounds.size.height) / 2 +  (Float(node.size.height) / 2 ) + y
-//        node.position.x = CGFloat(xPosition)
-//        node.position.y = CGFloat(yPosition)
-//    }
-    //================================================================
-    
-    
-    
+
     // MARK: - touchesBegan
     //================================================================
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
@@ -394,7 +350,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if(obstacle.position.x + (obstacle.size.width / 2) < hero.position.x &&
                     obstacle.isBottom && !obstacle.pointed)
                 {
-                    scoreInt++
+                    scoreInt = scoreInt + 3 // scoreInt++
                     obstacle.pointed = true
                 }
                 
@@ -415,7 +371,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             /******* Atualizamos a label pontuação *****/
             // Update label score
-            score.text = "Score: \(scoreInt)"
+            score.text = "\(scoreInt) %"
             
             for(var index = 0; index < Obstacles.count; index++)
             {
