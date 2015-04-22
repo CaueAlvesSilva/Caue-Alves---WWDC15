@@ -16,13 +16,13 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     private var pageViewController: UIPageViewController?
     
     // Initialize it right away here
-    private let contentImages = ["workPhoto1.png", "workPhoto2.png", "workPhoto3.png"]
-    
+    var contentImages: [(photoName:String, photoTitle:String, photoText:String)] = []
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectPhotos(type)
         createPageViewController()
         setupPageControl()
         
@@ -82,7 +82,9 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
         if itemIndex < contentImages.count {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as PageItemController
             pageItemController.itemIndex = itemIndex
-            pageItemController.imageName = contentImages[itemIndex]
+            pageItemController.imageName = contentImages[itemIndex].photoName
+            pageItemController.photoTitle = contentImages[itemIndex].photoTitle
+            pageItemController.photoText = contentImages[itemIndex].photoText
             return pageItemController
         }
         
@@ -97,6 +99,34 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+    
+    func selectPhotos(photoType: String)
+    {
+        if (photoType == "Work")
+        {
+            contentImages = [("workPhoto1.png", "Photo of Work 1", "This is the text of the work photo 1"),
+                             ("workPhoto2.png", "Photo of Work 2", "This is the text of the work photo 2"),
+                             ("workPhoto3.png", "Photo of Work 3", "This is the text of the work photo 3")]
+        }
+        else if (photoType == "Study")
+        {
+            contentImages = [("studyPhoto1.png", "Photo of Study 1", "This is the text of the study photo 1"),
+                             ("studyPhoto2.png", "Photo of Study 2", "This is the text of the study photo 2"),
+                             ("studyPhoto3.png", "Photo of Study 3", "This is the text of the study photo 3")]
+        }
+        else if (photoType == "Family")
+        {
+            contentImages = [("familyPhoto1.png", "Photo of Family 1", "This is the text of the family photo 1"),
+                             ("familyPhoto2.png", "Photo of Family 2", "This is the text of the family photo 2"),
+                             ("familyPhoto3.png", "Photo of Family 3", "This is the text of the family photo 3")]
+        }
+        else if (photoType == "Hobbies")
+        {
+            contentImages = [("hobbiesPhoto1.png", "Photo of Hobbies 1", "This is the text of the hobbies photo 1"),
+                             ("hobbiesPhoto2.png", "Photo of Hobbies 2", "This is the text of the hobbies photo 2"),
+                             ("hobbiesPhoto3.png", "Photo of Hobbies 3", "This is the text of the hobbies photo 3")]
+        }
     }
     
     

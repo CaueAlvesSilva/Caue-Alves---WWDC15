@@ -12,23 +12,43 @@ class PageItemController: UIViewController {
     
     // MARK: - Variables
     var itemIndex: Int = 0
-    var imageName: String = "" {
-        
+    
+    var photoTitle: String = "" {
         didSet {
-            
+            if let labelTitle = lblPhotoTitle {
+                labelTitle.text = photoTitle
+            }
+        }
+    }
+    
+    var photoText: String = "" {
+        didSet {
+            if let labelText = lblPhotoText {
+                labelText.text = photoText
+            }
+        }
+    }
+        
+    var imageName: String = "" {
+        didSet {
             if let imageView = contentImageView {
                 imageView.image = UIImage(named: imageName)
             }
-            
         }
     }
     
     @IBOutlet var contentImageView: UIImageView?
     
+    @IBOutlet weak var lblPhotoTitle: UILabel?
+    
+    @IBOutlet weak var lblPhotoText: UILabel?
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         contentImageView!.image = UIImage(named: imageName)
+        lblPhotoTitle!.text = photoTitle
+        lblPhotoText!.text = photoText
     }
 
 
