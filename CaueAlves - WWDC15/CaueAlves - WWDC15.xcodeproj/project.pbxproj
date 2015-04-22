@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B2307BB1AE70BC100EB5D42 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2307BA1AE70BC100EB5D42 /* DetailViewController.swift */; };
+		0B2307C11AE71BAE00EB5D42 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2307BE1AE71BAE00EB5D42 /* photo1.png */; };
+		0B2307C21AE71BAE00EB5D42 /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2307BF1AE71BAE00EB5D42 /* photo2.png */; };
+		0B2307C31AE71BAE00EB5D42 /* photo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2307C01AE71BAE00EB5D42 /* photo3.png */; };
 		0B329BEB1AE6E14A006EA86C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */; };
 		0B48947D1AE11FB300D84840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B48947C1AE11FB300D84840 /* AppDelegate.swift */; };
 		0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B48947E1AE11FB300D84840 /* GameScene.sks */; };
@@ -31,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		0B2307BA1AE70BC100EB5D42 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0B2307BE1AE71BAE00EB5D42 /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
+		0B2307BF1AE71BAE00EB5D42 /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
+		0B2307C01AE71BAE00EB5D42 /* photo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo3.png; sourceTree = "<group>"; };
 		0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0B4894771AE11FB300D84840 /* CaueAlves - WWDC15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CaueAlves - WWDC15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B48947B1AE11FB300D84840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 		0B30EBEC1AE1D2E2008363F3 /* photos */ = {
 			isa = PBXGroup;
 			children = (
+				0B2307BE1AE71BAE00EB5D42 /* photo1.png */,
+				0B2307BF1AE71BAE00EB5D42 /* photo2.png */,
+				0B2307C01AE71BAE00EB5D42 /* photo3.png */,
 			);
 			name = photos;
 			sourceTree = "<group>";
@@ -228,8 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2307C21AE71BAE00EB5D42 /* photo2.png in Resources */,
+				0B2307C11AE71BAE00EB5D42 /* photo1.png in Resources */,
 				0B4894881AE11FB300D84840 /* Images.xcassets in Resources */,
 				0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */,
+				0B2307C31AE71BAE00EB5D42 /* photo3.png in Resources */,
 				0B4894861AE11FB300D84840 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -214,8 +214,36 @@
                     <view key="view" contentMode="scaleToFill" id="mSx-41-fkQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="gray2" translatesAutoresizingMaskIntoConstraints="NO" id="8Ar-Ae-0gm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9mh-F3-0PV">
+                                <rect key="frame" x="176" y="72" width="248" height="241"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4J-CK-H9R">
+                                <rect key="frame" x="39" y="332" width="526" height="160"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cj7-IB-eU1">
+                                <rect key="frame" x="277" y="506" width="47" height="37"/>
+                                <connections>
+                                    <action selector="changePage:" destination="k8G-e1-2V2" eventType="valueChanged" id="qwJ-Dy-91d"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="8Ar-Ae-0gm" secondAttribute="centerX" id="EE5-PR-tDm"/>
+                            <constraint firstAttribute="centerY" secondItem="8Ar-Ae-0gm" secondAttribute="centerY" id="hIv-gt-Et3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgPhoto" destination="9mh-F3-0PV" id="TLp-Ec-cQL"/>
+                        <outlet property="lblText" destination="e4J-CK-H9R" id="98j-0D-f1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scn-jG-lgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
