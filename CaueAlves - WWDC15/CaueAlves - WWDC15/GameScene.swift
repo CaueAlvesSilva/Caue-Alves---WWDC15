@@ -121,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /******* Mesma logica do Chao2 ******/
         // Size and position of background1
-        background2 = SKSpriteNode(imageNamed: "sk")
+        background2 = SKSpriteNode(imageNamed: "sky")
         background2.xScale = 1.4
         background2.yScale = 1.4
         background2.position.x = view.bounds.width * 1.5
@@ -269,7 +269,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             /****** Tornar o pássaro influenciável pelo ambiente ******/
             hero.physicsBody?.dynamic = true
             /**** Colocamos uma velocidade de 175 na vertical que fará o pássaro dar o primeiro salto *****/
-            hero.physicsBody?.velocity = CGVectorMake(0, 50) // (0, 175)
+            hero.physicsBody?.velocity = CGVectorMake(0, 500) // (0, 175)
             /****** Deixamos de esconder a label da pontuação *******/
             score.hidden = false
             /***** Identificamos que o movimento do pássaro de iniciou *****/
@@ -464,6 +464,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
 }
 
+//================================================================
 
 
 // MARK: - Class Obstacle

@@ -310,7 +310,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQf-VL-nPH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQf-VL-nPH">
                                 <rect key="frame" x="125" y="42" width="351" height="348"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="284" id="joA-BN-2rD"/>
@@ -389,12 +389,12 @@
                                 <exclude reference="OiL-3T-Zvr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="XDa-hr-UTY"/>
-                                <exclude reference="Zje-pK-8Fs"/>
-                                <exclude reference="5Uy-x5-907"/>
-                                <exclude reference="8YL-uZ-NI1"/>
                                 <exclude reference="ibG-B5-vrV"/>
                                 <exclude reference="zSv-2j-Oio"/>
+                                <exclude reference="5Uy-x5-907"/>
+                                <exclude reference="8YL-uZ-NI1"/>
+                                <exclude reference="XDa-hr-UTY"/>
+                                <exclude reference="Zje-pK-8Fs"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -403,12 +403,12 @@
                                 <include reference="OiL-3T-Zvr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="XDa-hr-UTY"/>
-                                <include reference="Zje-pK-8Fs"/>
-                                <include reference="5Uy-x5-907"/>
-                                <include reference="8YL-uZ-NI1"/>
                                 <include reference="ibG-B5-vrV"/>
                                 <include reference="zSv-2j-Oio"/>
+                                <include reference="5Uy-x5-907"/>
+                                <include reference="8YL-uZ-NI1"/>
+                                <include reference="XDa-hr-UTY"/>
+                                <include reference="Zje-pK-8Fs"/>
                             </mask>
                         </variation>
                     </view>
