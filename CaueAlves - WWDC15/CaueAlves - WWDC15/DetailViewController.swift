@@ -16,11 +16,13 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     private var pageViewController: UIPageViewController?
     
     // Initialize it right away here
-    private let contentImages = ["photo1.png", "photo2.png", "photo3.png"]
+    private let contentImages = ["workPhoto1.png", "workPhoto2.png", "workPhoto3.png"]
+    
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         createPageViewController()
         setupPageControl()
         
