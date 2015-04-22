@@ -20,7 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Hero (character)
     var hero: SKSpriteNode = SKSpriteNode() // bird
-    var HeroTexture = SKTexture(imageNamed: "bird") // TexturaPassaro - imagem "bird.png"
+    var HeroTexture = SKTexture(imageNamed: "hero") // TexturaPassaro - imagem "bird.png"
     
     // Scenery
     var gameOverScreen: SKSpriteNode = SKSpriteNode() // cobrir
@@ -85,7 +85,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /***** No objecto Chão vamos colocar a imagem "Ground.png" ****/
         // Size and position of Floor1
-        floor1 = SKSpriteNode(imageNamed: "land")
+        floor1 = SKSpriteNode(imageNamed: "floor")
         floor1.size.width = view.bounds.width + 2
         floor1.position.x = view.bounds.width * 0.5
         floor1.position.y = floor1.size.height * 0.4
@@ -100,7 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // a primeira fica no centro do ecrã esta fica á direita do ecrã, com isto iremos
         // criar uma noção de movimento em que o cenário parece não acabar :)   ******/
         // Size and position of Floor2
-        floor2 = SKSpriteNode(imageNamed: "land")
+        floor2 = SKSpriteNode(imageNamed: "floor")
         floor2.size.width = view.bounds.width + 2
         floor2.position.x = view.bounds.width * 1.5
         floor2.position.y = floor2.size.height * 0.4
@@ -179,7 +179,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // e sua posição baseada no offset e no xx *******/
         // ObstacleBottom
         // image
-        obstacleBottom.texture = SKTexture(imageNamed: "PipeDown")
+        obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
         obstacleBottom.texture?.filteringMode = SKTextureFilteringMode.Nearest
         obstacleBottom.isBottom = true
         /****** A função SetRelativePositionBot será explicada mais a frente para já basta sabermos
