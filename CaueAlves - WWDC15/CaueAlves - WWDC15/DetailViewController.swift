@@ -12,9 +12,6 @@ class DetailViewController: UIViewController {
 
     var type:String!
     var pages: [(pageNumber: Int, showPhoto: String, showText: String)] = []
-
-    @IBOutlet weak var imgPhoto: UIImageView!
-    @IBOutlet weak var lblText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +30,6 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    @IBAction func changePage(sender: UIPageControl) {
-        
-        imgPhoto.image = UIImage(named: pages[sender.currentPage].showPhoto)
-        lblText.text = pages[sender.currentPage].showText
-    }
     
 
 }
