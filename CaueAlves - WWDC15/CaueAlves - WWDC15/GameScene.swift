@@ -45,6 +45,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score: SKLabelNode = SKLabelNode(fontNamed: "System-bold") // pontuacaoL
     var scoreInt: Int = 0 // pontuacao - em inteiro int
     
+    // MENSAGEM
+    var message: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
+    
     // Speed of the game
     var speedGame: CGFloat = 2.0 //2.0 velocidade
     
@@ -82,6 +85,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         score.text = "0 %"
         score.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         score.hidden = true
+        
+        
+        ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+        message.position.x = 40
+        message.position.y = 500
+        message.text = "Teste teste teste teste"
+        message.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        message.hidden = true
+        ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+        
         
         /***** No objecto Chão vamos colocar a imagem "Ground.png" ****/
         // Size and position of Floor1
@@ -155,6 +168,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(floor2)
         self.addChild(score)
         self.addChild(hero)
+        
+        
+        self.addChild(message)
     }
     //================================================================
     
@@ -183,13 +199,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // position
         // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
         if (scoreInt == 3){
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack1")
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX1")
             self.setSpecialPositionObstacle(obstacleBottom)
-        }else if (scoreInt == 5){
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack1")
+            message.text = "Mensagem 1111"
+            message.hidden = false
+        }else if (scoreInt == 6){
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX2")
             self.setSpecialPositionObstacle(obstacleBottom)
+            message.text = "Mensagem 2222"
+            message.hidden = false
         }else{
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack1")
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
             self.setPositionObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
         }
         // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -291,6 +311,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.physicsBody?.dynamic = false
             hero.position = CGPoint(x: 150, y: view!.bounds.width / 2 - 10)
             score.hidden = true
+            message.hidden = true
             inMotion = false
         }
     }
@@ -350,7 +371,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if(obstacle.position.x + (obstacle.size.width / 2) < hero.position.x &&
                     obstacle.isBottom && !obstacle.pointed)
                 {
-                    scoreInt = scoreInt + 3 // scoreInt++
+//                    scoreInt = scoreInt + 3
+                    scoreInt++
                     obstacle.pointed = true
                 }
                 
