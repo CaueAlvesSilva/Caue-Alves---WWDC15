@@ -19,6 +19,7 @@
 		0B4894861AE11FB300D84840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4894841AE11FB300D84840 /* Main.storyboard */; };
 		0B4894881AE11FB300D84840 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4894871AE11FB300D84840 /* Images.xcassets */; };
 		0B4894971AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4894961AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift */; };
+		0B9536E51AE735AB00544E0E /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9536E41AE735AB00544E0E /* PageItemController.swift */; };
 		0BBCCB341AE1C88B002EA99B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		0B4894901AE11FB300D84840 /* CaueAlves - WWDC15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CaueAlves - WWDC15Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4894951AE11FB300D84840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B4894961AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaueAlves___WWDC15Tests.swift"; sourceTree = "<group>"; };
+		0B9536E41AE735AB00544E0E /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
 		0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */,
 				0B329BEA1AE6E14A006EA86C /* ProfileViewController.swift */,
 				0B2307BA1AE70BC100EB5D42 /* DetailViewController.swift */,
+				0B9536E41AE735AB00544E0E /* PageItemController.swift */,
 			);
 			name = "Tabbar AboutMe";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4894811AE11FB300D84840 /* GameScene.swift in Sources */,
+				0B9536E51AE735AB00544E0E /* PageItemController.swift in Sources */,
 				0B4894831AE11FB300D84840 /* GameViewController.swift in Sources */,
 				0B329BEB1AE6E14A006EA86C /* ProfileViewController.swift in Sources */,
 				0B2307BB1AE70BC100EB5D42 /* DetailViewController.swift in Sources */,
