@@ -9,35 +9,46 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
+    
+    // MARK: - Properties (Buttons)
+    //================================================================
     @IBInspectable
     @IBOutlet weak var btnProfile: UIButton!
+    
     @IBInspectable
     @IBOutlet weak var btnWork: UIButton!
+    
     @IBInspectable
     @IBOutlet weak var btnStudy: UIButton!
+    
     @IBInspectable
     @IBOutlet weak var btnFamily: UIButton!
+    
     @IBInspectable
     @IBOutlet weak var btnHobbies: UIButton!
+    //================================================================
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
-    override func viewWillAppear(animated: Bool) {
+    
+    // MARK: - View Lifecycle
+    //================================================================
+    override func viewDidLoad() { super.viewDidLoad() }
+
+    override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }
+    //================================================================
+    
+    
+    
+    // MARK: - View Will Appear (Buttons' layout)
+    //================================================================
+    override func viewWillAppear(animated: Bool)
+    {
         btnWork.layer.backgroundColor = UIColor .redColor().CGColor
         btnWork.layer.borderWidth = 3
         btnWork.layer.borderColor = UIColor .whiteColor().CGColor
         btnWork.layer.cornerRadius = 40
         btnWork.layer.masksToBounds = true
         btnWork.clipsToBounds = true
-        
         
         btnStudy.layer.backgroundColor = UIColor .yellowColor().CGColor
         btnStudy.layer.borderWidth = 3
@@ -67,10 +78,14 @@ class MenuViewController: UIViewController {
         btnProfile.layer.masksToBounds = true
         btnProfile.clipsToBounds = true
     }
+    //================================================================
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+    
+    // MARK: - Prepare for Segue (send to detailView the information's type)
+    //================================================================
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         if let dvc = segue.destinationViewController as? DetailViewController
         {
             if (segue.identifier == "segueWork")
@@ -91,7 +106,6 @@ class MenuViewController: UIViewController {
             }
         }
     }
-    
-
+    //================================================================
     
 }

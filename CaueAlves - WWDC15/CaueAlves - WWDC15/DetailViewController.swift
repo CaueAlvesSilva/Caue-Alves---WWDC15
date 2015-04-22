@@ -10,16 +10,21 @@ import UIKit
 
 class DetailViewController: UIViewController, UIPageViewControllerDataSource {
 
+    // MARK: - Properties
+    //================================================================
     var type:String!
     
-    // MARK: - Variables
     private var pageViewController: UIPageViewController?
     
-    // Initialize it right away here
     var contentImages: [(photoName:String, photoTitle:String, photoText:String)] = []
+    //================================================================
+    
+    
     
     // MARK: - View Lifecycle
-    override func viewDidLoad() {
+    //================================================================
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         selectPhotos(type)
@@ -28,13 +33,20 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
         
         self.navigationItem.title = type
     }
+    //================================================================
     
-    private func createPageViewController() {
-        
+    
+    
+    // MARK: - Create the PageViewController
+    //================================================================
+    // create
+    private func createPageViewController()
+    {
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageController") as UIPageViewController
         pageController.dataSource = self
         
-        if contentImages.count > 0 {
+        if contentImages.count > 0
+        {
             let firstController = getItemController(0)!
             let startingViewControllers: NSArray = [firstController]
             pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
@@ -46,40 +58,50 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
         pageViewController!.didMoveToParentViewController(self)
     }
     
-    private func setupPageControl() {
+    // setUp
+    private func setupPageControl()
+    {
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.grayColor()
         appearance.currentPageIndicatorTintColor = UIColor.whiteColor()
         appearance.backgroundColor = UIColor.darkGrayColor()
     }
+    //================================================================
     
-    // MARK: - UIPageViewControllerDataSource
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    
+    // MARK: - Page Controller DataSource
+    //================================================================
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
         
         let itemController = viewController as PageItemController
         
-        if itemController.itemIndex > 0 {
+        if itemController.itemIndex > 0
+        {
             return getItemController(itemController.itemIndex-1)
         }
         
         return nil
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
+    {
         
         let itemController = viewController as PageItemController
         
-        if itemController.itemIndex+1 < contentImages.count {
+        if itemController.itemIndex+1 < contentImages.count
+        {
             return getItemController(itemController.itemIndex+1)
         }
         
         return nil
     }
     
-    private func getItemController(itemIndex: Int) -> PageItemController? {
-        
-        if itemIndex < contentImages.count {
+    private func getItemController(itemIndex: Int) -> PageItemController?
+    {
+        if itemIndex < contentImages.count
+        {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as PageItemController
             pageItemController.itemIndex = itemIndex
             pageItemController.imageName = contentImages[itemIndex].photoName
@@ -90,17 +112,27 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
         
         return nil
     }
+    //================================================================
+    
+    
     
     // MARK: - Page Indicator
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    //================================================================
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
         return contentImages.count
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
         return 0
     }
+    //================================================================
     
+    
+    
+    // MARK: - Selecting photos, titles and texts
+    //================================================================
     func selectPhotos(photoType: String)
     {
         if (photoType == "Work")
@@ -128,7 +160,6 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
                              ("hobbiesPhoto3.png", "Photo of Hobbies 3", "This is the text of the hobbies photo 3")]
         }
     }
+    //================================================================
     
-    
-
 }

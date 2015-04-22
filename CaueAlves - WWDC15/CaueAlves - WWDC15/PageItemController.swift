@@ -10,7 +10,8 @@ import UIKit
 
 class PageItemController: UIViewController {
     
-    // MARK: - Variables
+    // MARK: - Properties
+    //================================================================
     var itemIndex: Int = 0
     
     var photoTitle: String = "" {
@@ -37,20 +38,27 @@ class PageItemController: UIViewController {
         }
     }
     
+    // Outlets
+    
     @IBOutlet var contentImageView: UIImageView?
     
     @IBOutlet weak var lblPhotoTitle: UILabel?
     
     @IBOutlet weak var lblPhotoText: UILabel?
+    //================================================================
+    
+    
     
     // MARK: - View Lifecycle
-    override func viewDidLoad() {
+    //================================================================
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
         contentImageView!.image = UIImage(named: imageName)
         lblPhotoTitle!.text = photoTitle
         lblPhotoText!.text = photoText
     }
-
-
+    //================================================================
 
 }
