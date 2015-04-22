@@ -46,7 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreInt: Int = 0 // pontuacao - em inteiro int
     
     // Speed of the game
-    var speedGame: CGFloat = 2.0 // velocidade
+    var speedGame: CGFloat = 2.0 //2.0 velocidade
     
     // Game has started or not
     var inMotion:Bool = false // emMovimento
@@ -179,13 +179,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // e sua posição baseada no offset e no xx *******/
         // ObstacleBottom
         // image
-        obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
+        if (scoreInt == 4){
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX1")
+            self.setSpecialPositionObstacle(obstacleBottom)
+        }else if (scoreInt == 8){
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX2")
+            self.setSpecialPositionObstacle(obstacleBottom)
+        }else{
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
+            self.setPositionBottomObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
+        }
+//        obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
         obstacleBottom.texture?.filteringMode = SKTextureFilteringMode.Nearest
         obstacleBottom.isBottom = true
         /****** A função SetRelativePositionBot será explicada mais a frente para já basta sabermos
         / que tem o objectivo de colocar o nosso tubo no sitio certo *****/
         // position
-        self.setPositionBottomObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
+//        self.setPositionBottomObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
         /****** Definição das dimensões do seu corpo físico ******/
         // physicsBody
         obstacleBottom.physicsBody = SKPhysicsBody(rectangleOfSize: obstacleBottom.size)
@@ -237,6 +247,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         node.position.x = CGFloat(xPosition)
         node.position.y = CGFloat(yPosition)
+        println("\n\n\n\n\n")
+        println(xPosition)
+        println(yPosition)
+    }
+    
+    func setSpecialPositionObstacle(node: SKSpriteNode) // obstacle, position x and y
+    {
+        /****** O x é fácil é o nosso parâmetro X mais metade da largura do nosso tubo,
+        // temos de acrescentar metade da largura porque o tubo será criado a partir
+        // do seu centro, logo teremos de dar um desconto. ******/
+//        let xPosition = (Float(node.size.width) / 2) + x
+//        //No y temos o centro da altura da tela mais o parâmetro Y mais metade
+//        // da altura como explicado anteriormente
+//        let yPosition = Float(self.view!.bounds.size.height) / 2 -  (Float(node.size.height) / 2 ) + y
+        
+        node.position.x = CGFloat(406.25)
+        node.position.y = CGFloat(36.5)
     }
     //================================================================
     
