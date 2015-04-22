@@ -45,7 +45,10 @@ class GameViewController: UIViewController {
             
             skView.presentScene(scene)
         }
+        
+        showAlert()
     }
+    
 
     override func shouldAutorotate() -> Bool {
         return true
@@ -67,4 +70,22 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    
+    func showAlert()
+    {
+        // Instanciando um novo Alerta ou ActionSheet
+        let alerta: UIAlertController = UIAlertController(title: "Play the game and see my Timeline", message: "Touch the screen to start the game, and after this you'll know what to do ;)", preferredStyle: .Alert) // ou .ActionSheet
+        
+        // Criando uma acao1 (Sim) para o Alerta/ActionSheet
+        let acao1: UIAlertAction = UIAlertAction(title: "Start", style: .Default) {
+            action -> Void in
+        }
+        // add acao1 ao Alerta/ActionSheet
+        alerta.addAction(acao1)
+        
+        // Apresentar Alerta/ActionSheet
+        self.presentViewController(alerta, animated: true, completion: nil)
+    }
+
 }
