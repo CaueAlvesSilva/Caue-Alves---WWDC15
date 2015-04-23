@@ -90,7 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
         message.position.x = 40
         message.position.y = 500
-        message.text = "Teste teste teste teste"
+        message.text = ""
         message.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         message.hidden = true
         ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
@@ -197,19 +197,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // image
         /****** A função SetRelativePositionBot será explicada mais a frente para já basta sabermos que tem o objectivo de colocar o nosso tubo no sitio certo *****/
         // position
+        
         // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-        if (scoreInt == 3){
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX1")
-            self.setSpecialPositionObstacle(obstacleBottom)
-            message.text = "Mensagem 1111"
-            message.hidden = false
-        }else if (scoreInt == 6){
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX2")
-            self.setSpecialPositionObstacle(obstacleBottom)
-            message.text = "Mensagem 2222"
-            message.hidden = false
-        }else{
-            obstacleBottom.texture = SKTexture(imageNamed: "obstacle")
+        var remainder: Int
+        remainder = (scoreInt % 2)
+        println(remainder)
+//        var remainder = operand1 % operand2
+        
+        if (remainder == 0)
+        {
+            if (scoreInt == 4 || scoreInt == 10 || scoreInt == 16) // positions
+            {
+                obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack") // special
+                self.setSpecialPositionObstacle(obstacleBottom)
+                message.text = "Special"
+                message.hidden = false
+            }
+            else
+            {
+                obstacleBottom.texture = SKTexture(imageNamed: "obstacle") // predio
+                self.setPositionObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
+            }
+        }
+        else
+        {
+            obstacleBottom.texture = SKTexture(imageNamed: "obstacleX1") // muro
             self.setPositionObstacle(obstacleBottom, x: Float(xPositionEndScreen!), y: setDistanceUpDown)
         }
         // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -252,6 +264,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setSpecialPositionObstacle(node: SKSpriteNode) // obstacle
     {
+        
         node.position.x = CGFloat(406.25)
         node.position.y = CGFloat(36.5)
     }
@@ -374,6 +387,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //                    scoreInt = scoreInt + 3
                     scoreInt++
                     obstacle.pointed = true
+                    
+                    // 3 pts a mais que o scoreInt que faz o specialobstacle
+                    // 4 10 16
+                    if (scoreInt == 7 || scoreInt == 13 || scoreInt == 19)
+                    {
+                        message.hidden = true
+                    }
                 }
                 
                 /******* Mover o tubo para a esquerda com a velocidade definida ****/
