@@ -58,6 +58,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var heroCollision: UInt32 = 1 // birdCategory
     var obstacleColission: UInt32 = 2 // pipeCategory
     
+    // TimeLine
+    var endTimeline: Bool = false
     
     
     // MARK: - didMoveToView
@@ -80,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /****** A Label pontuação é colocada no canto superior esquerdo, mas para já fica escondida *******/
         // Size and position of label Score
-        score.position.x = 15
+        score.position.x = 13
         score.position.y = view.bounds.size.height - 50
         score.text = "0 %"
         score.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
@@ -187,6 +189,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let setDistanceUpDown = distanceUpDown - spaceTopBottom / 2
         //Declaração dos dois tubos
         let obstacleBottom = basicObstacle.copy() as Obstacle
+        let obstacleTop = basicObstacle.copy() as Obstacle
         //A posição x onde termina a tela
         let xPositionEndScreen = self.view?.bounds.size.width
         
@@ -201,8 +204,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
         var remainder: Int
         remainder = (scoreInt % 2)
-        println(remainder)
-//        var remainder = operand1 % operand2
         
         if (remainder == 0)
         {
@@ -240,6 +241,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Obstacles.append(obstacleBottom)
         //E por fim adicionamos ao cenário
         self.addChild(obstacleBottom)
+        
+        
+        
+        // OBSTACLE TOP
+        if (endTimeline == true){
+            /******** Neste pedaço de código vamos repetir o mesmo a cima mas
+            // para o tubo de cima. *******/
+            // Obstacle Top
+            // image
+            obstacleTop.texture = SKTexture(imageNamed: "obstacleX2")
+            obstacleTop.texture?.filteringMode = SKTextureFilteringMode.Nearest
+            /****** Temos aqui uma variante no Y pois vamos adicionar ao offset o Espaco
+            // assim ao seu deslocamento adicionamos mais o valor do espaço que
+            // provocará o intervalo entre os 2 tubos *****/
+            // position
+            self.setPositionTopObstacle(obstacleTop, x: Float(xPositionEndScreen!), y: Float(Float(setDistanceUpDown) + Float(spaceTopBottom)))
+            // physicsBody
+            obstacleTop.physicsBody = SKPhysicsBody(rectangleOfSize: obstacleTop.size)
+            obstacleTop.physicsBody?.dynamic = false
+            obstacleTop.physicsBody?.contactTestBitMask = heroCollision
+            obstacleTop.physicsBody?.collisionBitMask = heroCollision
+            // add
+            Obstacles.append(obstacleTop)
+            self.addChild(obstacleTop)
+        }
+        
+        
     }
     //================================================================
     
@@ -268,6 +296,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         node.position.x = CGFloat(406.25)
         node.position.y = CGFloat(36.5)
     }
+    
+    // MARK: - Set Position of Top Obstacle
+    //================================================================
+    /****** Função SetRelativePositionTop igual a anterior mas para o tubo de cima *****/
+    func setPositionTopObstacle (node: SKSpriteNode, x:Float, y:Float) // obstacle, position x and y
+    {
+        let xPosition = (Float(node.size.width) / 2) + x
+        let yPosition = Float(self.view!.bounds.size.height) / 2 +  (Float(node.size.height) / 2 ) + y
+        node.position.x = CGFloat(xPosition)
+        node.position.y = CGFloat(yPosition)
+    }
+    //================================================================
     //================================================================
 
     
@@ -287,7 +327,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             /**** Colocamos uma velocidade de 175 na vertical que fará o pássaro dar o primeiro salto *****/
             hero.physicsBody?.velocity = CGVectorMake(0, 500) // (0, 175)
             /****** Deixamos de esconder a label da pontuação *******/
-            score.hidden = false
+//            score.hidden = false
             /***** Identificamos que o movimento do pássaro de iniciou *****/
             inMotion = true
         }
@@ -394,6 +434,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     {
                         message.hidden = true
                     }
+                    
+                    // comecar jogo
+                    if (scoreInt == 20){
+                        endTimeline = true
+                        score.hidden = false
+                    }
                 }
                 
                 /******* Mover o tubo para a esquerda com a velocidade definida ****/
@@ -413,7 +459,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             /******* Atualizamos a label pontuação *****/
             // Update label score
-            score.text = "\(scoreInt) %"
+            score.text = "Score: \(scoreInt - 20)"
             
             for(var index = 0; index < Obstacles.count; index++)
             {
