@@ -329,28 +329,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shuahsuahshauhsuahushuahusaushaushashuaushausuhahushuahushuauhshausasuausuhauhsuashausuhauhsuhaus" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeM-9t-Kd6">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="177" id="k9a-b3-2LZ"/>
-                                    <constraint firstAttribute="width" constant="339" id="uxP-B6-X8K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="k9a-b3-2LZ"/>
-                                        <exclude reference="uxP-B6-X8K"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="k9a-b3-2LZ"/>
-                                        <include reference="uxP-B6-X8K"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ehuehueheuheue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiL-3T-Zvr">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -373,24 +351,46 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shuahsuahshauhsuahushuahusaushaushashuaushausuhahushuahushuauhshausasuausuhauhsuashausuhauhsuhaus" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeM-9t-Kd6">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="339" id="ILE-9Z-O7l"/>
+                                    <constraint firstAttribute="height" constant="216" id="QKP-1q-i4f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ILE-9Z-O7l"/>
+                                        <exclude reference="QKP-1q-i4f"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ILE-9Z-O7l"/>
+                                        <include reference="QKP-1q-i4f"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="OiL-3T-Zvr" secondAttribute="centerY" constant="-56.5" id="5Uy-x5-907"/>
+                            <constraint firstAttribute="centerX" secondItem="KeM-9t-Kd6" secondAttribute="centerX" constant="-5.5" id="6yl-e4-hPb"/>
                             <constraint firstAttribute="centerX" secondItem="OiL-3T-Zvr" secondAttribute="centerX" id="8YL-uZ-NI1"/>
+                            <constraint firstAttribute="centerY" secondItem="KeM-9t-Kd6" secondAttribute="centerY" constant="-183" id="Uic-V2-qs1"/>
                             <constraint firstAttribute="centerY" secondItem="KQf-VL-nPH" secondAttribute="centerY" constant="132" id="XDa-hr-UTY"/>
                             <constraint firstAttribute="centerX" secondItem="KQf-VL-nPH" secondAttribute="centerX" id="Zje-pK-8Fs"/>
-                            <constraint firstAttribute="centerY" secondItem="KeM-9t-Kd6" secondAttribute="centerY" constant="-201.5" id="ibG-B5-vrV"/>
-                            <constraint firstAttribute="centerX" secondItem="KeM-9t-Kd6" secondAttribute="centerX" constant="-5.5" id="zSv-2j-Oio"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="KeM-9t-Kd6"/>
                                 <exclude reference="OiL-3T-Zvr"/>
+                                <exclude reference="KeM-9t-Kd6"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ibG-B5-vrV"/>
-                                <exclude reference="zSv-2j-Oio"/>
+                                <exclude reference="6yl-e4-hPb"/>
+                                <exclude reference="Uic-V2-qs1"/>
                                 <exclude reference="5Uy-x5-907"/>
                                 <exclude reference="8YL-uZ-NI1"/>
                                 <exclude reference="XDa-hr-UTY"/>
@@ -399,12 +399,12 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="KeM-9t-Kd6"/>
                                 <include reference="OiL-3T-Zvr"/>
+                                <include reference="KeM-9t-Kd6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ibG-B5-vrV"/>
-                                <include reference="zSv-2j-Oio"/>
+                                <include reference="6yl-e4-hPb"/>
+                                <include reference="Uic-V2-qs1"/>
                                 <include reference="5Uy-x5-907"/>
                                 <include reference="8YL-uZ-NI1"/>
                                 <include reference="XDa-hr-UTY"/>

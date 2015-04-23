@@ -137,27 +137,71 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     {
         if (photoType == "Work")
         {
-            contentImages = [("workPhoto1.png", "Photo of Work 1", "This is the text of the work photo 1"),
-                             ("workPhoto2.png", "Photo of Work 2", "This is the text of the work photo 2"),
-                             ("workPhoto3.png", "Photo of Work 3", "This is the text of the work photo 3")]
+            contentImages =
+                [("workPhoto1.jpg",
+                  "First Job",
+                  "Em 2012 consegui meu primeiro emprego na area de TI, na consultoria STEFANINI, eu trabalhava como analista de requisitos usando UML."),
+                
+                 ("workPhoto2.jpg",
+                  "Analyst and Developer",
+                  "Em 2013 ainda trabalhando na STEFANINI, comecei a criar meus primeiros programas nas linguagens COBOL e JCL."),
+                
+                 ("workPhoto3.jpg",
+                  "Bank Developer",
+                  "Em 2014 eu ja tinha quase 2 anos de experiência em programação COBOL, consegui um emprego no Banco Itaú, um dos mais importantes bancos do Brasil. No Itaú participei de grandes projetos e pude deixar meu nome em programas que são executados todos os dias.")]
         }
         else if (photoType == "Study")
         {
-            contentImages = [("studyPhoto1.png", "Photo of Study 1", "This is the text of the study photo 1"),
-                             ("studyPhoto2.png", "Photo of Study 2", "This is the text of the study photo 2"),
-                             ("studyPhoto3.png", "Photo of Study 3", "This is the text of the study photo 3")]
+            contentImages =
+                [("studyPhoto1.jpg",
+                  "High School Graduation",
+                  "Em 2011 me formei no ensino médio pela Escola Tecnica Albert Einstein."),
+                    
+                 ("studyPhoto2.jpg",
+                  "Technical Programmer",
+                  "Na Escola Técnica Albert Einstein eu também me formei como técnico em programação, onde ajudei a criar o projeto ECOSOFT, um software que auxilia e incentiva a reciclagem de materiais eletrônicos."),
+                    
+                 ("studyPhoto3.jpg",
+                  "University",
+                  "Em 2012 comecei a estudar Sistemas de Informacao na Universidade Presbiteriana Mackenzie. Hoje estou no 3th ano e falta apenas um para me formar."),
+            
+                 ("studyPhoto4.png",
+                  "Other Courses",
+                  "Desde que comecei a estudar programacao, já fiz diversos cursos e estudei diversas linguagens, entre eles: Java, MySQL, COBOL, JCL, DB2, HTML and UML."),
+            
+                 ("studyPhoto5.png",
+                  "iOS Development",
+                  "Em 2015 comecei a estudar e desenvolver apps em iOS em um projeto da Universidade.")]
         }
         else if (photoType == "Family")
         {
-            contentImages = [("familyPhoto1.png", "Photo of Family 1", "This is the text of the family photo 1"),
-                             ("familyPhoto2.png", "Photo of Family 2", "This is the text of the family photo 2"),
-                             ("familyPhoto3.png", "Photo of Family 3", "This is the text of the family photo 3")]
+            contentImages =
+                [("familyPhoto1.jpg",
+                  "My Family",
+                  "This is my family. \nMy mom Sueli, my sisters Priscila and Mayara, and my brother Fabricio."),
+                    
+                 ("familyPhoto2.jpg",
+                  "Girlfriend",
+                  "I live with my girlfriend Gabriela, she studies to be a Web Designer and helps me a lot with my projects.")]
+                    
+//                 ("familyPhoto3.jpg",
+//                  "My son",
+//                  "Eu ainda não o conheco pessoalmente, mas ele está chegando.")]
         }
         else if (photoType == "Hobbies")
         {
-            contentImages = [("hobbiesPhoto1.png", "Photo of Hobbies 1", "This is the text of the hobbies photo 1"),
-                             ("hobbiesPhoto2.png", "Photo of Hobbies 2", "This is the text of the hobbies photo 2"),
-                             ("hobbiesPhoto3.png", "Photo of Hobbies 3", "This is the text of the hobbies photo 3")]
+            contentImages =
+                [("hobbiesPhoto1.jpg",
+                  "Video Games",
+                  "As a good geek, one of my favorities hobbies is play video games, in special soccer and FPS games."),
+                    
+                 ("hobbiesPhoto2.jpg",
+                  "Watch Everything",
+                  "In free time i also like to watch tv programs, movies, series and go to the cinema"),
+            
+                 ("hobbiesPhoto3.jpg",
+                  "Soccer",
+                  "And as a good brazilian, i love soccer. I like to play soccer with friends, watch soccer matches on tv and go to the stadium.")]
         }
     }
     //================================================================
