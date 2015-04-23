@@ -37,9 +37,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Obstacles: [Obstacle] = [] // Tubos array
     
     // Special Obstacles
-    var specialObstacles: [(nome: String, imagem: String)] = [("a 1","b 1"),
-                                                              ("a 2","b 2"),
-                                                              ("a 3","b 3")]
+    var specialObstacles: [(year: String, text: String)] = [("1993","Nasci"),
+                                                            ("2012","Mackenzie"),
+                                                            ("2014","Itau")]
     var index: Int = 0
     
     // Range os Obstacles
@@ -52,7 +52,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreInt: Int = 0 // pontuacao - em inteiro int
     
     // MENSAGEM
-    var message: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
+    var messageYear: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
+    var messageText: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
     
     // Speed of the game
     var speedGame: CGFloat = 2.0 //2.0 velocidade
@@ -96,11 +97,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-        message.position.x = 40
-        message.position.y = 500
-        message.text = ""
-        message.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
-        message.hidden = true
+        messageYear.position.x = 40
+        messageYear.position.y = 500
+        messageYear.text = ""
+        messageYear.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        messageYear.hidden = true
+        
+        messageText.position.x = 40
+        messageText.position.y = 470
+        messageText.text = ""
+        messageText.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        messageText.hidden = true
         ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
         
         
@@ -178,7 +185,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(hero)
         
         
-        self.addChild(message)
+        self.addChild(messageYear)
+        self.addChild(messageText)
     }
     //================================================================
     
@@ -217,9 +225,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             {
                 obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack") // special
                 self.setSpecialPositionObstacle(obstacleBottom)
-                message.text = specialObstacles[index].nome
-                println(specialObstacles[index].imagem)
-                message.hidden = false
+                messageYear.text = specialObstacles[index].year
+                messageText.text = specialObstacles[index].text
+                messageYear.hidden = false
+                messageText.hidden = false
                 index++
             }
             else
@@ -372,7 +381,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.physicsBody?.dynamic = false
             hero.position = CGPoint(x: 150, y: view!.bounds.width / 2 - 10)
             score.hidden = true
-            message.hidden = true
+            messageYear.hidden = true
+            messageText.hidden = true
             inMotion = false
         }
     }
@@ -440,7 +450,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // 4 10 16
                     if (scoreInt == 7 || scoreInt == 13 || scoreInt == 19)
                     {
-                        message.hidden = true
+                        messageYear.hidden = true
+                        messageText.hidden = true
                     }
                     
                     // comecar jogo
