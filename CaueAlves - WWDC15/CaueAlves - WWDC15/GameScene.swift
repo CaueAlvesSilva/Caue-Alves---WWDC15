@@ -36,6 +36,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var spaceTopBottom: Float = 250 // Espaco - entre tubo de cima e de baixo
     var Obstacles: [Obstacle] = [] // Tubos array
     
+    // Special Obstacles
+    var specialObstacles: [(nome: String, imagem: String)] = [("a 1","b 1"),
+                                                              ("a 2","b 2"),
+                                                              ("a 3","b 3")]
+    var index: Int = 0
+    
     // Range os Obstacles
     var prevNum: Float = 0 // igual
     var maxRange: Float = 175 // igual
@@ -211,8 +217,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             {
                 obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack") // special
                 self.setSpecialPositionObstacle(obstacleBottom)
-                message.text = "Special"
+                message.text = specialObstacles[index].nome
+                println(specialObstacles[index].imagem)
                 message.hidden = false
+                index++
             }
             else
             {
