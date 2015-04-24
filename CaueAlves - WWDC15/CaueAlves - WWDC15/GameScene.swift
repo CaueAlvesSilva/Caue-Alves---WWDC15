@@ -39,9 +39,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Special Obstacles
     var indexSpecialObstacles: Int = 0
     var specialObstacles:
-    [(year: String, text: String)] = [("1993","Nasci"),
+    [(year: String, text: String)] = [("1993","Hospital"),
+                                      ("2011","Einstein"),
                                       ("2012","Mackenzie"),
-                                      ("2014","Itau")]
+                                      ("2013","Stefanini"),
+                                      ("2014","Itau"),
+                                      ("2015","MackMobile"),
+                                      ("Play", "Enjoy it")]
     
     // Messages for the Special Obstacles
     var messageYear: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
@@ -191,19 +195,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var remainder: Int = (scoreInt % 2)
         
         
-        ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-        // SPECIAL OBSTACLES POSITION  /
-        // - Birthday: 4               \
-        // - Mackenzie: 10             /
-        // - Itau: 16                  \
-        ///\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+        //============================
+        // SPECIAL OBSTACLES POSITION
+        // - Birthday: 4 
+        // - Einstein: 10
+        // - Mackenzie: 16
+        // - Stefanini: 22
+        // - Itau: 28
+        // - MackMobile: 34
+        //============================
         
         
         // Create Bottom Obstacles (Wall, Building or Special)
         if (remainder == 0)
         {
             // Obstacle Special
-            if (scoreInt == 4 || scoreInt == 10 || scoreInt == 16) // positions
+            if (scoreInt ==  4 || scoreInt == 10 || scoreInt == 16 ||
+                scoreInt == 22 || scoreInt == 28 || scoreInt == 34 ||
+                scoreInt == 40)
             {
                 obstacleBottom.texture = SKTexture(imageNamed: selectTexture(scoreInt))
                 self.setPositionSpecialObstacle(obstacleBottom, obstacleNumber: scoreInt)
@@ -271,17 +280,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (obstacleNumber == 4)
         {
             node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(-1.5)
+            node.position.y = CGFloat(115)
         }
         else if (obstacleNumber == 10)
         {
             node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(36.5) // 36.5
+            node.position.y = CGFloat(115) // 36.5
         }
         else if (obstacleNumber == 16)
         {
             node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(200.5)
+            node.position.y = CGFloat(115)
+        }
+        else if (obstacleNumber == 22)
+        {
+            node.position.x = CGFloat(406.25)
+            node.position.y = CGFloat(115)
+        }
+        else if (obstacleNumber == 28)
+        {
+            node.position.x = CGFloat(406.25)
+            node.position.y = CGFloat(115)
+        }
+        else if (obstacleNumber == 34)
+        {
+            node.position.x = CGFloat(406.25)
+            node.position.y = CGFloat(115)
         }
     }
     
@@ -293,15 +317,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if (obstacleNumber == 4)
         {
-            textureName = "obstacleMack"
+            textureName = "hospital"
         }
         else if (obstacleNumber == 10)
         {
-            textureName = "PipeDown"
+            textureName = "highSchool"
         }
         else if (obstacleNumber == 16)
         {
-            textureName = "PipeUp"
+            textureName = "university"
+        }
+        else if (obstacleNumber == 22)
+        {
+            textureName = "firstJob"
+        }
+        else if (obstacleNumber == 28)
+        {
+            textureName = "bank"
+        }
+        else if (obstacleNumber == 34)
+        {
+            textureName = "iosDevelopment"
         }
 
         return textureName
@@ -443,18 +479,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     obstacle.pointed = true
                     
                     // Hide messages
-                    if (scoreInt == 7 || scoreInt == 13 || scoreInt == 19) // +3
+                    if (scoreInt ==  7 || scoreInt == 13 || scoreInt == 19 ||
+                        scoreInt == 25 || scoreInt == 31 || scoreInt == 37 ||
+                        scoreInt == 43) // +3
                     {
                         messageYear.hidden = true
                         messageText.hidden = true
                     }
                     
                     // Start game after show the timeline
-                    if (scoreInt == 20)
+                    if (scoreInt == 43)
                     {
                         endTimeline = true
                         score.hidden = false
                     }
+                    
+                    if (scoreInt == 63 || scoreInt == 83)
+                    {
+                        speedGame = speedGame * 2
+                    }
+                    
                 }
                 
                 // Move obstacle to left
@@ -472,7 +516,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             
             // Update label score
-            score.text = "Score: \(scoreInt - 20)"
+            score.text = "Score: \(scoreInt - 43)"
             
             for(var index = 0; index < Obstacles.count; index++)
             {
