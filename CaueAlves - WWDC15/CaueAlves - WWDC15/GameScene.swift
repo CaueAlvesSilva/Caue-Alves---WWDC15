@@ -22,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Game Over
     var gameOverScreen: SKSpriteNode = SKSpriteNode()
+    var gameOverMessage1: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
+    var gameOverMessage2: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
     
     // Sky
     var sky1: SKSpriteNode = SKSpriteNode()
@@ -39,13 +41,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Special Obstacles
     var indexSpecialObstacles: Int = 0
     var specialObstacles:
-    [(year: String, text: String)] = [("1993","Hospital"),
-                                      ("2011","Einstein"),
-                                      ("2012","Mackenzie"),
-                                      ("2013","Stefanini"),
-                                      ("2014","Itau"),
-                                      ("2015","MackMobile"),
-                                      ("Play", "Enjoy it")]
+    [(year: String, text: String)] = [("1993","I was born in São Paulo city"),
+                                      ("2011","Graduated as Technical Developer"),
+                                      ("2012","Started study in Mackenzie University"),
+                                      ("2013","Job as System Analyst in Stefanini"),
+                                      ("2014","Job as COBOL Developer in Itau Bank"),
+                                      ("2015","Started study iOS in MackMobile Project"),
+                                      ("Now you can play for fun :)", "Enjoy it!")]
     
     // Messages for the Special Obstacles
     var messageYear: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
@@ -64,7 +66,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreInt: Int = 0
     
     // Speed of the game
-    var speedGame: CGFloat = 2.0
+    var speedGame: CGFloat = 3.0
+    var speedMessage: SKLabelNode = SKLabelNode(fontNamed: "System-bold")
     
     // Game in motion
     var inMotion:Bool = false
@@ -92,6 +95,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOverScreen.position.x = view.bounds.size.width / 2
         gameOverScreen.position.y = view.bounds.size.height / 2
         
+        // Game Over Message 1
+        gameOverMessage1.position.x = 40
+        gameOverMessage1.position.y = 430
+        gameOverMessage1.text = "Oh no! You lost :("
+        gameOverMessage1.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        gameOverMessage1.zPosition = 11
+        gameOverMessage1.fontSize = 30
+        
+        // Game Over Message 2
+        gameOverMessage2.position.x = 40
+        gameOverMessage2.position.y = 400
+        gameOverMessage2.text = "Touch the screen and try again"
+        gameOverMessage2.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        gameOverMessage2.zPosition = 11
+        gameOverMessage2.fontSize = 20
+        
+        // Speed Message
+        speedMessage.position.x = 40
+        speedMessage.position.y = 400
+        speedMessage.text = "FASTER!"
+        speedMessage.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        speedMessage.zPosition = 11
+        speedMessage.fontSize = 30
+        
         // Label Score
         score.position.x = 13
         score.position.y = view.bounds.size.height - 50
@@ -105,6 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         messageYear.text = ""
         messageYear.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         messageYear.hidden = true
+        messageYear.fontSize = 25
         
         // Message 2 (Text)
         messageText.position.x = 40
@@ -112,6 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         messageText.text = ""
         messageText.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         messageText.hidden = true
+        messageText.fontSize = 18
         
         // Street 1
         street1 = SKSpriteNode(imageNamed: "street")
@@ -163,7 +192,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVectorMake(0, -4) // -5.0
         
-        // Add objects (except gameOverScreen)
+        // Add objects (except Game Over Screen and Messages)
         self.addChild(sky1)
         self.addChild(sky2)
         self.addChild(street1)
@@ -413,6 +442,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else
         {
             gameOverScreen.removeFromParent()
+            gameOverMessage1.removeFromParent()
+            gameOverMessage2.removeFromParent()
             
             for index in Obstacles
             {
@@ -481,7 +512,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // Hide messages
                     if (scoreInt ==  7 || scoreInt == 13 || scoreInt == 19 ||
                         scoreInt == 25 || scoreInt == 31 || scoreInt == 37 ||
-                        scoreInt == 43) // +3
+                        scoreInt == 45) // +3
                     {
                         messageYear.hidden = true
                         messageText.hidden = true
@@ -494,9 +525,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         score.hidden = false
                     }
                     
-                    if (scoreInt == 63 || scoreInt == 83)
+                    // Change speed of the game
+                    if (scoreInt == 63 || scoreInt == 93 || scoreInt == 123)
                     {
-                        speedGame = speedGame * 2
+                        self.addChild(speedMessage)
+                        speedGame = speedGame + 2
+                    }
+                    
+                    // Hide speed message
+                    if (scoreInt == 66 || scoreInt == 96 || scoreInt == 236)
+                    {
+                        speedMessage.removeFromParent()
                     }
                     
                 }
@@ -560,9 +599,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 index.physicsBody = nil
             }
             
+            // Show game over messages
             self.addChild(gameOverScreen)
+            self.addChild(gameOverMessage1)
+            self.addChild(gameOverMessage2)
+            
+            // Hide other messages
+            speedMessage.removeFromParent()
+            messageYear.hidden = true
+            messageText.hidden = true
             
             indexSpecialObstacles = 0
+            
+            speedGame = 3.0
             
             endTimeline = false
         }
