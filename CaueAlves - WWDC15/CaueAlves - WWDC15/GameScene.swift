@@ -18,9 +18,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: - Properties and Sprite Nodes
     //================================================================
     
-    // Hero (character)
-    var hero: SKSpriteNode = SKSpriteNode() // bird
-    var HeroTexture = SKTexture(imageNamed: "hero") // TexturaPassaro
+    // Rocket (character)
+    var rocket: SKSpriteNode = SKSpriteNode() // bird
+    var rocketTexture = SKTexture(imageNamed: "rocket") // TexturaPassaro
     
     // Scenery
     var gameOverScreen: SKSpriteNode = SKSpriteNode() // cobrir
@@ -62,7 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var inMotion:Bool = false // emMovimento
     
     // Collision
-    var heroCollision: UInt32 = 1 // birdCategory
+    var rocketCollision: UInt32 = 1 // birdCategory
     var obstacleColission: UInt32 = 2 // pipeCategory
     
     // TimeLine
@@ -158,16 +158,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /********* Este filteringMode serve para ajustarmos o tamanho da imagem do passaro
         // ao seu objecto *******/
-        // Texture of Hero
-        HeroTexture.filteringMode = SKTextureFilteringMode.Nearest
-        hero = SKSpriteNode(texture: HeroTexture)
-        hero.physicsBody = SKPhysicsBody(circleOfRadius: 5)
+        // Texture of Rocket
+        rocketTexture.filteringMode = SKTextureFilteringMode.Nearest
+        rocket = SKSpriteNode(texture: rocketTexture)
+        rocket.physicsBody = SKPhysicsBody(circleOfRadius: 5)
         //Para já e como o jogo ainda não começou vamos colocar o pássaro estatico
-        hero.physicsBody?.dynamic = false
-        hero.physicsBody?.contactTestBitMask = heroCollision
-        hero.physicsBody?.collisionBitMask = obstacleColission
-        hero.zPosition = 9
-        hero.position = CGPoint(x: 150, y: view.bounds.width / 2 - 10)
+        rocket.physicsBody?.dynamic = false
+        rocket.physicsBody?.contactTestBitMask = rocketCollision
+        rocket.physicsBody?.collisionBitMask = obstacleColission
+        rocket.zPosition = 9
+        rocket.position = CGPoint(x: 150, y: view.bounds.width / 2 - 10)
         
         /***** Aqui colocamos a física do nosso mundo onde a gravidade vai ser y = -0.5 ****/
         // Gravity
@@ -182,7 +182,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(floor1)
         self.addChild(floor2)
         self.addChild(score)
-        self.addChild(hero)
+        self.addChild(rocket)
         
         
         self.addChild(messageYear)
@@ -223,13 +223,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         {
             if (scoreInt == 4 || scoreInt == 10 || scoreInt == 16) // positions
             {
-                obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack") // special
-                self.setSpecialPositionObstacle(obstacleBottom)
-                messageYear.text = specialObstacles[index].year
-                messageText.text = specialObstacles[index].text
-                messageYear.hidden = false
-                messageText.hidden = false
-                index++
+                obstacleBottom.texture = SKTexture(imageNamed: selectTexture(scoreInt))
+//                obstacleBottom.texture = SKTexture(imageNamed: "obstacleMack") // special
+                self.setSpecialPositionObstacle(obstacleBottom, obstacleNumber: scoreInt)
+                showTexts()
             }
             else
             {
@@ -251,8 +248,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // physicsBody
         obstacleBottom.physicsBody = SKPhysicsBody(rectangleOfSize: obstacleBottom.size)
         obstacleBottom.physicsBody?.dynamic = false
-        obstacleBottom.physicsBody?.contactTestBitMask = heroCollision
-        obstacleBottom.physicsBody?.collisionBitMask = heroCollision
+        obstacleBottom.physicsBody?.contactTestBitMask = rocketCollision
+        obstacleBottom.physicsBody?.collisionBitMask = rocketCollision
         /****** Adicionamos o tubo ao nosso array *******/
         // add
         Obstacles.append(obstacleBottom)
@@ -277,8 +274,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // physicsBody
             obstacleTop.physicsBody = SKPhysicsBody(rectangleOfSize: obstacleTop.size)
             obstacleTop.physicsBody?.dynamic = false
-            obstacleTop.physicsBody?.contactTestBitMask = heroCollision
-            obstacleTop.physicsBody?.collisionBitMask = heroCollision
+            obstacleTop.physicsBody?.contactTestBitMask = rocketCollision
+            obstacleTop.physicsBody?.collisionBitMask = rocketCollision
             // add
             Obstacles.append(obstacleTop)
             self.addChild(obstacleTop)
@@ -307,11 +304,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         node.position.y = CGFloat(yPosition)
     }
     
-    func setSpecialPositionObstacle(node: SKSpriteNode) // obstacle
+    func setSpecialPositionObstacle(node: SKSpriteNode, obstacleNumber: Int) // obstacle
     {
+        if (obstacleNumber == 4){
+            node.position.x = CGFloat(406.25)
+            node.position.y = CGFloat(-1.5)
+        }
+        else if (obstacleNumber == 10){
+            node.position.x = CGFloat(406.25)
+            node.position.y = CGFloat(36.5) // 36.5
+        }
+        else if (obstacleNumber == 16){
+            node.position.x = CGFloat(406.25)
+            node.position.y = CGFloat(200.5)
+        }
         
-        node.position.x = CGFloat(406.25)
-        node.position.y = CGFloat(36.5)
+        
+    }
+    
+    func selectTexture(obstacleNumber: Int) -> String
+    {
+        var textureName: String = ""
+        
+        if (obstacleNumber == 4){
+            textureName = "obstacleMack"
+        }
+        else if (obstacleNumber == 10){
+            textureName = "PipeDown"
+        }
+        else if (obstacleNumber == 16){
+            textureName = "PipeUp"
+        }
+
+        return textureName
+    }
+    
+    func showTexts()
+    {
+        messageYear.text = specialObstacles[index].year
+        messageText.text = specialObstacles[index].text
+        messageYear.hidden = false
+        messageText.hidden = false
+        index++
     }
     
     // MARK: - Set Position of Top Obstacle
@@ -335,14 +369,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     {
         /****** Se o Passaro tem physicsBody.dynamic = false então é o primeiro toque, e o vai iniciar-se ******/
         // Game start - first touch
-        if((hero.physicsBody?.dynamic) == false) // First touch
+        if((rocket.physicsBody?.dynamic) == false) // First touch
         {
             /****** Chamar spawnPipeRow para crias os primeiros dois tubos *****/
             self.createObstacles(0)
             /****** Tornar o pássaro influenciável pelo ambiente ******/
-            hero.physicsBody?.dynamic = true
+            rocket.physicsBody?.dynamic = true
             /**** Colocamos uma velocidade de 175 na vertical que fará o pássaro dar o primeiro salto *****/
-            hero.physicsBody?.velocity = CGVectorMake(0, 500) // (0, 175)
+            rocket.physicsBody?.velocity = CGVectorMake(0, 500) // (0, 175)
             /****** Deixamos de esconder a label da pontuação *******/
 //            score.hidden = false
             /***** Identificamos que o movimento do pássaro de iniciou *****/
@@ -353,13 +387,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else if(inMotion)
         {
             /****** Velocidade de salto por defeito de 200 *****/
-            var heroSpeed: CGFloat = 300 // 200
+            var rocketSpeed: CGFloat = 300 // 200
             /******* Se o pássaro se encontrar perto do cimo reduzir a velocidade do salto ******/
-            if(self.view!.bounds.size.height - hero.position.y < 85)
+            if(self.view!.bounds.size.height - rocket.position.y < 85)
             {
-                heroSpeed -= 85 - (self.view!.bounds.size.height - position.y )
+                rocketSpeed -= 85 - (self.view!.bounds.size.height - position.y )
             }
-            hero.physicsBody?.velocity = CGVectorMake(0, heroSpeed)
+            rocket.physicsBody?.velocity = CGVectorMake(0, rocketSpeed)
         }
         
         /******* Se o jogo se encontrar parado por Game Over recomeçar de novo ****/
@@ -378,8 +412,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             /***** Colocar pontuação a Zero ******/
             scoreInt = 0
             /***** E colocar Passaro com posição e definições de inicio de jogo ****/
-            hero.physicsBody?.dynamic = false
-            hero.position = CGPoint(x: 150, y: view!.bounds.width / 2 - 10)
+            rocket.physicsBody?.dynamic = false
+            rocket.position = CGPoint(x: 150, y: view!.bounds.width / 2 - 10)
             score.hidden = true
             messageYear.hidden = true
             messageText.hidden = true
@@ -439,7 +473,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 /****** Se um tubo de baixo já passou pelo pássaro então somamos um ponto e marcamos o tubo para que não pontue mais */
                 // Score points by passing obstacles
-                if(obstacle.position.x + (obstacle.size.width / 2) < hero.position.x &&
+                if(obstacle.position.x + (obstacle.size.width / 2) < rocket.position.x &&
                     obstacle.isBottom && !obstacle.pointed)
                 {
 //                    scoreInt = scoreInt + 3
@@ -454,7 +488,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         messageText.hidden = true
                     }
                     
-                    // comecar jogo
+                    // comecar jogo depois da timeline
                     if (scoreInt == 20){
                         endTimeline = true
                         score.hidden = false
@@ -510,7 +544,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             /***** Paramos o movimento ****/
             inMotion = false
             /*** Paramos o pássaro ****/
-            hero.physicsBody?.velocity = CGVectorMake(0, 0 )
+            rocket.physicsBody?.velocity = CGVectorMake(0, 0 )
             /***** Eliminamos os tubos ****/
             for index in Obstacles
             {
@@ -518,10 +552,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             /***** E por fim cobrir o ecrã com a tela cinzenta *****/
             self.addChild(gameOverScreen)
+            index = 0
+            endTimeline = false
         }
         else
         {
-            hero.physicsBody?.velocity = CGVectorMake(0, 0 )
+            rocket.physicsBody?.velocity = CGVectorMake(0, 0 )
         }
     }
     //================================================================
@@ -551,10 +587,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         prevNum = randomNum1
         return randomNum1
     }
-    
+
 }
 
 //================================================================
+
+
+
 
 
 // MARK: - Class Obstacle
