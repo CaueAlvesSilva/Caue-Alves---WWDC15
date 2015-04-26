@@ -42,11 +42,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var indexSpecialObstacles: Int = 0
     var specialObstacles:
     [(year: String, text: String)] = [("1993","I was born in São Paulo city"),
-                                      ("2011","Graduated as Technical Developer"),
-                                      ("2012","Started study in Mackenzie University"),
-                                      ("2013","Job as System Analyst in Stefanini"),
-                                      ("2014","Job as COBOL Developer in Itau Bank"),
-                                      ("2015","Started study iOS in MackMobile Project"),
+                                      ("2011","I graduated as Technical Developer"),
+                                      ("2012","I began to study in Mackenzie University"),
+                                      ("2013","I worked as System Analyst in Stefanini"),
+                                      ("2014","I worked as COBOL Developer in Itau Bank"),
+                                      ("2015","I began to study iOS in MackMobile project"),
                                       ("Now you can play for fun :)", "Enjoy it!")]
     
     // Messages for the Special Obstacles
@@ -106,7 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Game Over Message 2
         gameOverMessage2.position.x = 40
         gameOverMessage2.position.y = 400
-        gameOverMessage2.text = "Touch the screen and try again"
+        gameOverMessage2.text = "Touch the screen to try again"
         gameOverMessage2.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         gameOverMessage2.zPosition = 11
         gameOverMessage2.fontSize = 20
@@ -140,7 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         messageText.text = ""
         messageText.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         messageText.hidden = true
-        messageText.fontSize = 18
+        messageText.fontSize = 17
         
         // Street 1
         street1 = SKSpriteNode(imageNamed: "street")
@@ -214,8 +214,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let setDistanceUpDown = distanceUpDown - spaceTopBottom / 2
         
         // Obstacles
-        let obstacleBottom = basicObstacle.copy() as Obstacle
-        let obstacleTop = basicObstacle.copy() as Obstacle
+        let obstacleBottom = basicObstacle.copy() as! Obstacle
+        let obstacleTop = basicObstacle.copy() as! Obstacle
         
         // Position x -> end of the screen
         let xPositionEndScreen = self.view?.bounds.size.width
@@ -226,11 +226,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //============================
         // SPECIAL OBSTACLES POSITION
-        // - Birthday: 4 
-        // - Einstein: 10
-        // - Mackenzie: 16
-        // - Stefanini: 22
-        // - Itau: 28
+        // - Hospital: 4
+        // - HighSchool: 10
+        // - University: 16
+        // - FirstJob: 22
+        // - Bank: 28
         // - MackMobile: 34
         //============================
         
@@ -244,7 +244,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 scoreInt == 40)
             {
                 obstacleBottom.texture = SKTexture(imageNamed: selectTexture(scoreInt))
-                self.setPositionSpecialObstacle(obstacleBottom, obstacleNumber: scoreInt)
+                obstacleBottom.position.x = CGFloat(406.25)
+                obstacleBottom.position.y = CGFloat(115)
                 showTexts()
             }
             // Obstacle Wall
@@ -303,42 +304,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    // Set Position of Special Obstacles
-    func setPositionSpecialObstacle(node: SKSpriteNode, obstacleNumber: Int)
-    {
-        if (obstacleNumber == 4)
-        {
-            node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(115)
-        }
-        else if (obstacleNumber == 10)
-        {
-            node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(115) // 36.5
-        }
-        else if (obstacleNumber == 16)
-        {
-            node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(115)
-        }
-        else if (obstacleNumber == 22)
-        {
-            node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(115)
-        }
-        else if (obstacleNumber == 28)
-        {
-            node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(115)
-        }
-        else if (obstacleNumber == 34)
-        {
-            node.position.x = CGFloat(406.25)
-            node.position.y = CGFloat(115)
-        }
-    }
-    
-    
     // Select Texture os Special Obstacles
     func selectTexture(obstacleNumber: Int) -> String
     {
@@ -366,7 +331,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         else if (obstacleNumber == 34)
         {
-            textureName = "iosDevelopment"
+            textureName = "mackMobile"
+        }
+        else if (obstacleNumber == 40)
+        {
+            textureName = "building"
         }
 
         return textureName
@@ -414,7 +383,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //=======================================================================================
     
     // Touch the screen
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
     {
         // Game start - first touch
         if((rocket.physicsBody?.dynamic) == false)
@@ -510,9 +479,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     obstacle.pointed = true
                     
                     // Hide messages
-                    if (scoreInt ==  7 || scoreInt == 13 || scoreInt == 19 ||
-                        scoreInt == 25 || scoreInt == 31 || scoreInt == 37 ||
-                        scoreInt == 45) // +3
+                    if (scoreInt ==  8 || scoreInt == 14 || scoreInt == 20 ||
+                        scoreInt == 26 || scoreInt == 32 || scoreInt == 38 ||
+                        scoreInt == 46) // +3
                     {
                         messageYear.hidden = true
                         messageText.hidden = true
@@ -533,7 +502,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     }
                     
                     // Hide speed message
-                    if (scoreInt == 66 || scoreInt == 96 || scoreInt == 236)
+                    if (scoreInt == 66 || scoreInt == 96 || scoreInt == 126)
                     {
                         speedMessage.removeFromParent()
                     }

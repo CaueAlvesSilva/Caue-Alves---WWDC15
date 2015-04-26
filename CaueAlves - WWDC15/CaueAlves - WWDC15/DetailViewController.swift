@@ -42,14 +42,14 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     // create
     private func createPageViewController()
     {
-        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageController") as UIPageViewController
+        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageController") as! UIPageViewController
         pageController.dataSource = self
         
         if contentImages.count > 0
         {
             let firstController = getItemController(0)!
             let startingViewControllers: NSArray = [firstController]
-            pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            pageController.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
         
         pageViewController = pageController
@@ -75,7 +75,7 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
         
-        let itemController = viewController as PageItemController
+        let itemController = viewController as! PageItemController
         
         if itemController.itemIndex > 0
         {
@@ -88,7 +88,7 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
     {
         
-        let itemController = viewController as PageItemController
+        let itemController = viewController as! PageItemController
         
         if itemController.itemIndex+1 < contentImages.count
         {
@@ -102,7 +102,7 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
     {
         if itemIndex < contentImages.count
         {
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as PageItemController
+            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as! PageItemController
             pageItemController.itemIndex = itemIndex
             pageItemController.imageName = contentImages[itemIndex].photoName
             pageItemController.photoTitle = contentImages[itemIndex].photoTitle
@@ -138,70 +138,70 @@ class DetailViewController: UIViewController, UIPageViewControllerDataSource {
         if (photoType == "Work")
         {
             contentImages =
-                [("workPhoto1.jpg",
+                [("workPhoto1",
                   "First Job",
-                  "Em 2012 consegui meu primeiro emprego na area de TI, na consultoria STEFANINI, eu trabalhava como analista de requisitos usando UML."),
+                  "In 2012 I got my first job in\nInformation Tecnology area on\nStefanini consultancy.\nI worked as analyst requirements\nusing UML."),
                 
-                 ("workPhoto2.jpg",
-                  "Analyst and Developer",
-                  "Em 2013 ainda trabalhando na STEFANINI, comecei a criar meus primeiros programas nas linguagens COBOL e JCL."),
+                 ("workPhoto2",
+                  "Developer",
+                  "In 2013, still working on Stefanini,\nI started to develop my first codes\nin COBOL and JCL languages."),
                 
-                 ("workPhoto3.jpg",
+                 ("workPhoto3",
                   "Bank Developer",
-                  "Em 2014 eu ja tinha quase 2 anos de experiência em programação COBOL, consegui um emprego no Banco Itaú, um dos mais importantes bancos do Brasil. No Itaú participei de grandes projetos e pude deixar meu nome em programas que são executados todos os dias.")]
+                  "In 2014 I had almost 2 years experience developing in COBOL, then I got a job in Itau bank, one of the most importants banks in Brazil. In Itau I participated of big projects and I wrote my name in codes that run daily.")]
         }
         else if (photoType == "Study")
         {
             contentImages =
-                [("studyPhoto1.jpg",
+                [("studyPhoto1",
                   "High School Graduation",
-                  "Em 2011 me formei no ensino médio pela Escola Tecnica Albert Einstein."),
+                  "In 2011, I graduated at\nAlbert Einstein Technical School."),
                     
-                 ("studyPhoto2.jpg",
-                  "Technical Programmer",
-                  "Na Escola Técnica Albert Einstein eu também me formei como técnico em programação, onde ajudei a criar o projeto ECOSOFT, um software que auxilia e incentiva a reciclagem de materiais eletrônicos."),
+                 ("studyPhoto2",
+                  "Developer",
+                  "In Albert Einstein I also gratuated as technical developer. I developed a project called ECOSOFT, a software that helped and encouraged people to recycle eletronic materials."),
                     
-                 ("studyPhoto3.jpg",
+                 ("studyPhoto3",
                   "University",
-                  "Em 2012 comecei a estudar Sistemas de Informacao na Universidade Presbiteriana Mackenzie. Hoje estou no 3th ano e falta apenas um para me formar."),
+                  "In 2012 I began to study\nInformation Technology in\nMackenzie University."),
             
-                 ("studyPhoto4.png",
+                 ("studyPhoto4",
                   "Other Courses",
-                  "Desde que comecei a estudar programacao, já fiz diversos cursos e estudei diversas linguagens, entre eles: Java, MySQL, COBOL, JCL, DB2, HTML and UML."),
+                  "Since 2011, I already studied many development languages,\nincluding Java, MySQL, COBOL, JCL, DB2, HTML and UML too."),
             
-                 ("studyPhoto5.png",
+                 ("studyPhoto5",
                   "iOS Development",
-                  "Em 2015 comecei a estudar e desenvolver apps em iOS em um projeto da Universidade.")]
+                  "In 2015, I began to study and develop iOS applications in a university project called MackMobile.")]
         }
         else if (photoType == "Family")
         {
             contentImages =
-                [("familyPhoto1.jpg",
+                [("familyPhoto1",
                   "My Family",
-                  "This is my family. \nMy mom Sueli, my sisters Priscila and Mayara, and my brother Fabricio."),
+                  "This is my family, my mom Sueli,\nmy sisters Priscila and Mayara,\nand my brother Fabricio.\nI'm the youngest of the family."),
                     
-                 ("familyPhoto2.jpg",
+                 ("familyPhoto2",
                   "Girlfriend",
-                  "I live with my girlfriend Gabriela, she studies to be a Web Designer and helps me a lot with my projects.")]
-                    
-//                 ("familyPhoto3.jpg",
-//                  "My son",
-//                  "Eu ainda não o conheco pessoalmente, mas ele está chegando.")]
+                  "I live with my girlfriend Gabriela,\nshe is studying to be a\nWeb Designer and helps me a lot\nwith my projects."),
+            
+                 ("familyPhoto3",
+                  "My son",
+                  "I still don't know him personally,\nbut he is coming soon.")]
         }
         else if (photoType == "Hobbies")
         {
             contentImages =
-                [("hobbiesPhoto1.jpg",
+                [("hobbiesPhoto1",
                   "Video Games",
-                  "As a good geek, one of my favorities hobbies is play video games, in special soccer and FPS games."),
+                  "As a good geek, one of my favorites hobbies is play video games,\nespecially soccer and FPS games."),
                     
-                 ("hobbiesPhoto2.jpg",
-                  "Watch Everything",
-                  "In free time i also like to watch tv programs, movies, series and go to the cinema"),
+                 ("hobbiesPhoto2",
+                  "Watch TV",
+                  "In free time I also like\nto watch tv programs, movies, series\nand go to the cinema."),
             
-                 ("hobbiesPhoto3.jpg",
+                 ("hobbiesPhoto3",
                   "Soccer",
-                  "And as a good brazilian, i love soccer. I like to play soccer with friends, watch soccer matches on tv and go to the stadium.")]
+                  "As a good brazilian, I love soccer.\nI like to play soccer with friends,\nwatch soccer matches on tv\nand go to the stadium.")]
         }
     }
     //================================================================
