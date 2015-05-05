@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y3H-PN-5FB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y3H-PN-5FB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -329,7 +329,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ehuehueheuheue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiL-3T-Zvr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiL-3T-Zvr">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8BL-0v-T3h"/>
@@ -351,7 +351,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shuahsuahshauhsuahushuahusaushaushashuaushausuhahushuahushuauhshausasuausuhauhsuashausuhauhsuhaus" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeM-9t-Kd6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeM-9t-Kd6">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="339" id="ILE-9Z-O7l"/>
@@ -673,24 +673,24 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="7pZ-wX-hin"/>
+                                <exclude reference="uCO-hA-fDT"/>
                                 <exclude reference="qBw-Q5-Ipc"/>
                                 <exclude reference="ysN-ia-gLS"/>
                                 <exclude reference="0jg-uh-mF8"/>
                                 <exclude reference="W6o-IG-dEE"/>
                                 <exclude reference="FtF-el-0eL"/>
                                 <exclude reference="hQK-WV-BOo"/>
-                                <exclude reference="sb8-o9-o1C"/>
-                                <exclude reference="tDM-Dz-EUv"/>
                                 <exclude reference="93Q-i7-Gof"/>
                                 <exclude reference="SkW-Tr-Ldb"/>
                                 <exclude reference="621-bo-4Og"/>
                                 <exclude reference="hdl-So-ca1"/>
+                                <exclude reference="sb8-o9-o1C"/>
+                                <exclude reference="tDM-Dz-EUv"/>
                                 <exclude reference="CHJ-nA-KVh"/>
                                 <exclude reference="jyC-bK-Saz"/>
                                 <exclude reference="4e9-O6-2Kv"/>
                                 <exclude reference="eY4-h7-m4P"/>
-                                <exclude reference="7pZ-wX-hin"/>
-                                <exclude reference="uCO-hA-fDT"/>
                                 <exclude reference="9s2-Jt-cNB"/>
                                 <exclude reference="PQj-qZ-snB"/>
                                 <exclude reference="CuJ-v8-gV3"/>
@@ -699,24 +699,24 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="7pZ-wX-hin"/>
+                                <include reference="uCO-hA-fDT"/>
                                 <include reference="qBw-Q5-Ipc"/>
                                 <include reference="ysN-ia-gLS"/>
                                 <include reference="0jg-uh-mF8"/>
                                 <include reference="W6o-IG-dEE"/>
                                 <include reference="FtF-el-0eL"/>
                                 <include reference="hQK-WV-BOo"/>
-                                <include reference="sb8-o9-o1C"/>
-                                <include reference="tDM-Dz-EUv"/>
                                 <include reference="93Q-i7-Gof"/>
                                 <include reference="SkW-Tr-Ldb"/>
                                 <include reference="621-bo-4Og"/>
                                 <include reference="hdl-So-ca1"/>
+                                <include reference="sb8-o9-o1C"/>
+                                <include reference="tDM-Dz-EUv"/>
                                 <include reference="CHJ-nA-KVh"/>
                                 <include reference="jyC-bK-Saz"/>
                                 <include reference="4e9-O6-2Kv"/>
                                 <include reference="eY4-h7-m4P"/>
-                                <include reference="7pZ-wX-hin"/>
-                                <include reference="uCO-hA-fDT"/>
                                 <include reference="9s2-Jt-cNB"/>
                                 <include reference="PQj-qZ-snB"/>
                                 <include reference="CuJ-v8-gV3"/>

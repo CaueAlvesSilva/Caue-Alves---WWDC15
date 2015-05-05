@@ -554,7 +554,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
  
     // Collisions
-    func didBeginContact(contact: SKPhysicsContact!)
+    func didBeginContact(contact: SKPhysicsContact)
     {
         // Game Over
         if(inMotion)
