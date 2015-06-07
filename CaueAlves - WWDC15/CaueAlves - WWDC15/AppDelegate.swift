@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var audioPlayerMusic = AVAudioPlayer()
+    var gameSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("gameMusic", ofType: "mp3")!)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        audioPlayerMusic = AVAudioPlayer(contentsOfURL: gameSound, error: nil)
+        audioPlayerMusic.prepareToPlay()
+        audioPlayerMusic.play()
+        audioPlayerMusic.numberOfLoops = -1
+        //audioPlayerMusic.volume = 0.07
+        
         return true
     }
 

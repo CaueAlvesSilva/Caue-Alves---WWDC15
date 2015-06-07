@@ -18,6 +18,8 @@
 		0B4894971AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4894961AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift */; };
 		0B9536E51AE735AB00544E0E /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9536E41AE735AB00544E0E /* PageItemController.swift */; };
 		0BBCCB341AE1C88B002EA99B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */; };
+		0BFD5BB11B24401A003C9EC6 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD5BB01B24401A003C9EC6 /* gameMusic.mp3 */; };
+		0BFD5BB31B2441AB003C9EC6 /* Blop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD5BB21B2441AB003C9EC6 /* Blop.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		0B4894961AE11FB300D84840 /* CaueAlves___WWDC15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaueAlves___WWDC15Tests.swift"; sourceTree = "<group>"; };
 		0B9536E41AE735AB00544E0E /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
 		0BBCCB331AE1C88B002EA99B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0BFD5BB01B24401A003C9EC6 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
+		0BFD5BB21B2441AB003C9EC6 /* Blop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Blop.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				0B2307BC1AE7146200EB5D42 /* Tabbar Timeline */,
 				0B4894841AE11FB300D84840 /* Main.storyboard */,
 				0B4894871AE11FB300D84840 /* Images.xcassets */,
+				0BFD5BB01B24401A003C9EC6 /* gameMusic.mp3 */,
+				0BFD5BB21B2441AB003C9EC6 /* Blop.mp3 */,
 				0B48947A1AE11FB300D84840 /* Supporting Files */,
 			);
 			path = "CaueAlves - WWDC15";
@@ -225,6 +231,8 @@
 			files = (
 				0B4894881AE11FB300D84840 /* Images.xcassets in Resources */,
 				0B48947F1AE11FB300D84840 /* GameScene.sks in Resources */,
+				0BFD5BB31B2441AB003C9EC6 /* Blop.mp3 in Resources */,
+				0BFD5BB11B24401A003C9EC6 /* gameMusic.mp3 in Resources */,
 				0B4894861AE11FB300D84840 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

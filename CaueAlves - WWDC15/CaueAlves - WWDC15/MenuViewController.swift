@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class MenuViewController: UIViewController {
     
@@ -26,6 +28,9 @@ class MenuViewController: UIViewController {
     
     @IBInspectable
     @IBOutlet weak var btnHobbies: UIButton!
+    
+    var audioPlayerSound = AVAudioPlayer()
+    var gameSoundBlop = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Blop", ofType: "mp3")!)
     //================================================================
     
     
@@ -86,6 +91,11 @@ class MenuViewController: UIViewController {
     //================================================================
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+        audioPlayerSound = AVAudioPlayer(contentsOfURL: gameSoundBlop, error: nil)
+        audioPlayerSound.prepareToPlay()
+        audioPlayerSound.play()
+        //audioPlayerSound.volume = 0.3
+        
         if let dvc = segue.destinationViewController as? DetailViewController
         {
             if (segue.identifier == "segueWork")
