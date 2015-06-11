@@ -30,7 +30,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var btnHobbies: UIButton!
     
     var audioPlayerSound = AVAudioPlayer()
-    var gameSoundBlop = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Blop", ofType: "mp3")!)
+    var gameSoundBlop = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "mp3")!)
     //================================================================
     
     
@@ -94,7 +94,7 @@ class MenuViewController: UIViewController {
         audioPlayerSound = AVAudioPlayer(contentsOfURL: gameSoundBlop, error: nil)
         audioPlayerSound.prepareToPlay()
         audioPlayerSound.play()
-        //audioPlayerSound.volume = 0.3
+        audioPlayerSound.volume = 0.4
         
         if let dvc = segue.destinationViewController as? DetailViewController
         {

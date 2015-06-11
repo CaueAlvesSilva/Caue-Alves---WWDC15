@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     var audioPlayerMusic = AVAudioPlayer()
-    var gameSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("gameMusic", ofType: "mp3")!)
+    var gameSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("backgroundMusic", ofType: "wav")!)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         audioPlayerMusic.prepareToPlay()
         audioPlayerMusic.play()
         audioPlayerMusic.numberOfLoops = -1
-        //audioPlayerMusic.volume = 0.07
+        audioPlayerMusic.volume = 0.09
         
         return true
     }

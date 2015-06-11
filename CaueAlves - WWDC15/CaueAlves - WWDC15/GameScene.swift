@@ -9,12 +9,18 @@
 import SpriteKit
 import Foundation
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     // MARK: - Properties and Sprite Nodes
     //=======================================================================================
+    
+    // Sound
+    var audioPlayerSound = AVAudioPlayer()
+    var gameSoundBlop = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("jump", ofType: "wav")!)
+    var gameSoundGameOver = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("crash", ofType: "wav")!)
 
     // Rocket
     var rocket: SKSpriteNode = SKSpriteNode()
@@ -385,6 +391,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Touch the screen
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
     {
+        // Click Sound
+        audioPlayerSound = AVAudioPlayer(contentsOfURL: gameSoundBlop, error: nil)
+        audioPlayerSound.prepareToPlay()
+        audioPlayerSound.play()
+        audioPlayerSound.volume = 0.2
+        
         // Game start - first touch
         if((rocket.physicsBody?.dynamic) == false)
         {
@@ -559,6 +571,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Game Over
         if(inMotion)
         {
+            // Game Over Sound
+            audioPlayerSound = AVAudioPlayer(contentsOfURL: gameSoundGameOver, error: nil)
+            audioPlayerSound.prepareToPlay()
+            audioPlayerSound.play()
+            audioPlayerSound.volume = 0.2
+            
             inMotion = false
         
             rocket.physicsBody?.velocity = CGVectorMake(0, 0 )
